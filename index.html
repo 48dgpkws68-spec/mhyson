@@ -3,389 +3,650 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>mhyson. Air Chair · Ergonomische bureaustoel</title>
-<meta name="description" content="De mhyson. Air Chair: ademende mesh, verstelbare hoofdsteun, opklapbare armleuningen en schommelfunctie. Gratis verzending, 30 dagen proefzitten.">
+<title>mhyson. Air Chair · De bureaustoel in vijf kleuren</title>
+<meta name="description" content="De mhyson. Air Chair: ademende mesh, hoofdsteun, opklapbare armleuningen en schommelfunctie. In Blush, Sand, Sky, Stone en Midnight. Gratis verzending, 30 dagen proefzitten.">
 <meta property="og:title" content="mhyson. Air Chair · Zit beter. Werk langer.">
-<meta property="og:image" content="img/stoel-zwart.jpg">
+<meta property="og:image" content="https://mhyson.com/img/og.jpg">
+<meta name="theme-color" content="#f3d9d5">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/stoel-roze.webp">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2216%22 fill=%22%23231b1a%22/%3E%3Ctext x=%2230%22 y=%2244%22 font-family=%22Georgia,serif%22 font-size=%2240%22 fill=%22%23f3d9d5%22 text-anchor=%22middle%22%3Em%3C/text%3E%3Ccircle cx=%2251%22 cy=%2242%22 r=%224%22 fill=%22%23e9a39b%22/%3E%3C/svg%3E">
 <style>
 :root{
-  --bg:#f6f1ee; --bg2:#efe7e2; --ink:#1b1716; --muted:#7a6f6b; --line:#e3d8d2;
-  --rose:#d98f8f; --rose-d:#b86e6e; --card:#fbf8f6; --dark:#141111;
-  --r:28px; --ease:cubic-bezier(.2,.8,.2,1);
+  --bg:#f3d9d5; --bg2:#ecc9c4; --acc:#b9706b; --ink:#231b1a; --soft:#6f5552;
+  --hi:rgba(255,255,255,.75); --lo:rgba(140,70,64,.28);
+  --line:rgba(35,27,26,.12); --card:rgba(255,255,255,.55);
+  --ease:cubic-bezier(.16,1,.3,1); --r:30px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background-color 1.1s var(--ease),color 1.1s var(--ease)}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+.wrap{width:min(1320px,100% - 32px);margin-inline:auto}
 .serif{font-family:Fraunces,Georgia,serif}
-.wrap{width:min(1240px,100% - 32px);margin-inline:auto}
-.eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--rose-d);font-weight:600}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:18px 30px;border-radius:999px;background:var(--ink);color:#fff;font-weight:600;font-size:14px;letter-spacing:.08em;text-transform:uppercase;border:0;cursor:pointer;transition:transform .4s var(--ease),background .3s}
-.btn:hover{transform:translateY(-2px);background:#000}
-.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
-.btn.rose{background:var(--rose-d)}
-.dot{color:var(--rose)}
+.eyebrow{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--acc);font-weight:600;transition:color 1s var(--ease)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:18px 30px;border-radius:999px;background:var(--ink);color:var(--bg);font-weight:600;font-size:13px;letter-spacing:.12em;text-transform:uppercase;border:0;cursor:pointer;transition:transform .5s var(--ease),background-color 1s var(--ease),color 1s var(--ease),box-shadow .5s;position:relative;overflow:hidden;white-space:nowrap}
+.btn:hover{transform:translateY(-3px);box-shadow:0 18px 40px -12px rgba(0,0,0,.35)}
+.btn .arr{transition:transform .4s var(--ease)}.btn:hover .arr{transform:translateX(4px)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px currentColor}
+.emb{font-family:Fraunces,serif;font-weight:600;letter-spacing:-.055em;line-height:.85;color:var(--bg);text-shadow:-3px -3px 3px var(--hi),5px 6px 12px var(--lo);transition:color 1.1s var(--ease),text-shadow 1.1s var(--ease);user-select:none;pointer-events:none}
+
+/* korrel */
+body::after{content:"";position:fixed;inset:-50%;z-index:100;pointer-events:none;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 1.2s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}}
 
 /* topbar + nav */
-.topbar{background:var(--dark);color:#e9e2df;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
-.topbar .wrap{display:flex;justify-content:space-between;gap:16px;padding:9px 0;overflow:hidden;white-space:nowrap}
-.topbar .t2,.topbar .t3{display:none}
-@media(min-width:800px){.topbar .t2,.topbar .t3{display:block}}
-nav.main{position:sticky;top:0;z-index:50;background:rgba(246,241,238,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid transparent;transition:border-color .3s}
-nav.main.scrolled{border-color:var(--line)}
-nav.main .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
-.logo{font-family:Fraunces,serif;font-size:28px;font-weight:500;letter-spacing:-.02em}
-.links{display:none;gap:34px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
-.links a{opacity:.75;transition:opacity .2s}.links a:hover{opacity:1}
-@media(min-width:900px){.links{display:flex}}
-nav .btn{padding:12px 22px;font-size:12px}
+.topbar{background:var(--ink);color:var(--bg);font-size:11px;letter-spacing:.22em;text-transform:uppercase;overflow:hidden;transition:background-color 1s,color 1s}
+.topbar .run{display:flex;gap:60px;width:max-content;padding:10px 0;animation:run 38s linear infinite}
+.topbar .run span::before{content:"✦";margin-right:60px;opacity:.5}
+@keyframes run{to{transform:translateX(-50%)}}
+nav.main{position:fixed;left:0;right:0;top:38px;z-index:70;transition:top .5s var(--ease)}
+nav.main.stuck{top:12px}
+nav.main .bar{display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 10px 0 26px;border-radius:999px;background:transparent;transition:background-color .6s var(--ease),box-shadow .6s,backdrop-filter .6s}
+nav.main.stuck .bar{background:color-mix(in srgb,var(--bg) 72%,transparent);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);box-shadow:0 10px 40px -18px rgba(0,0,0,.3),inset 0 0 0 1px var(--line)}
+.logo{font-family:Fraunces,serif;font-size:30px;font-weight:500;letter-spacing:-.03em}
+.logo i{font-style:normal;color:var(--acc);transition:color 1s}
+.links{display:none;gap:36px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+.links a{position:relative;opacity:.8}.links a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.links a:hover::after{transform:scaleX(1);transform-origin:left}
+@media(min-width:960px){.links{display:flex}}
+nav .btn{padding:13px 22px;font-size:11px}
 
-/* hero */
-.hero{position:relative;padding:40px 0 60px;overflow:hidden}
-.hero .wrap{display:grid;gap:24px;align-items:center}
-@media(min-width:960px){.hero .wrap{grid-template-columns:1fr 1.1fr}.hero{padding:70px 0 90px}}
-.hero h1{font-family:Fraunces,serif;font-weight:500;font-size:clamp(46px,7.4vw,104px);line-height:.95;letter-spacing:-.035em;margin:18px 0 22px}
-.hero h1 em{font-style:italic;color:var(--rose-d)}
-.hero p.lead{font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:30em}
-.price-row{display:flex;align-items:baseline;gap:14px;margin:30px 0 26px}
-.price{font-family:Fraunces,serif;font-size:44px;font-weight:600}
-.price-was{color:var(--muted);text-decoration:line-through}
-.price-note{font-size:13px;color:var(--muted)}
-.cta-row{display:flex;gap:12px;flex-wrap:wrap}
-.trust{display:flex;gap:22px;flex-wrap:wrap;margin-top:30px;font-size:13px;color:var(--muted)}
-.trust span::before{content:"✓ ";color:var(--rose-d);font-weight:700}
+/* HERO */
+.hero{position:relative;min-height:100svh;padding:130px 0 40px;overflow:hidden;display:flex;align-items:center}
+.hero .glow{position:absolute;width:70vmax;height:70vmax;left:50%;top:55%;translate:-50% -50%;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,#fff 55%,transparent),transparent 70%);filter:blur(10px);pointer-events:none}
+.hero .big{position:absolute;left:50%;top:34%;translate:-50% -50%;font-size:clamp(120px,19vw,330px);white-space:nowrap;z-index:0;will-change:transform}
+.hero .grid{position:relative;z-index:2;display:grid;gap:10px;align-items:center}
+@media(min-width:1200px){.hero .grid{grid-template-columns:1fr 1.1fr 1fr}}
+.hero h1{font-family:Fraunces,serif;font-weight:400;font-size:clamp(50px,6.4vw,100px);line-height:.92;letter-spacing:-.04em;margin:18px 0 20px}
+.hero h1 em{font-style:italic;color:var(--acc);transition:color 1s}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.08em}
+.hero h1 .ln>span{display:inline-block;transform:translateY(105%);animation:up 1.2s var(--ease) forwards}
+.hero h1 .ln:nth-child(2)>span{animation-delay:.12s}
+@keyframes up{to{transform:none}}
+.hero .lead{color:var(--soft);font-size:17px;max-width:24em;opacity:0;animation:fade 1s .5s var(--ease) forwards;transition:color 1s}
+@keyframes fade{to{opacity:1}}
+.chairstage{position:relative;height:min(74vh,720px);display:grid;place-items:center;perspective:1200px}
+.chairstage .floor{position:absolute;bottom:3%;left:50%;width:62%;height:7%;translate:-50% 0;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.28),transparent);filter:blur(8px);animation:shadow 6s ease-in-out infinite}
+.chairstage .tilt{position:relative;height:100%;width:100%;transform-style:preserve-3d;transition:transform .9s var(--ease)}
+.chairstage img{position:absolute;inset:0;margin:auto;height:92%;width:auto;max-width:100%;object-fit:contain;filter:drop-shadow(0 40px 40px rgba(0,0,0,.18));transition:opacity .9s var(--ease),transform 1.1s var(--ease),filter .9s var(--ease);animation:float 6s ease-in-out infinite}
+.chairstage img.out{opacity:0;transform:translateX(-60px) scale(.94) rotate(-3deg);filter:blur(10px)}
+.chairstage img.in{opacity:0;transform:translateX(60px) scale(.94) rotate(3deg);filter:blur(10px)}
+@keyframes float{50%{translate:0 -14px}}
+@keyframes shadow{50%{scale:.88;opacity:.75}}
+.side{display:flex;flex-direction:column;gap:22px}
+@media(min-width:1200px){.side.r{align-items:flex-end;text-align:right}}
+.cname{font-family:Fraunces,serif;font-style:italic;font-size:clamp(34px,3.6vw,54px);line-height:1;letter-spacing:-.03em;height:1.1em;overflow:hidden;position:relative;min-width:6ch}
+.cname span{display:block;transition:transform .9s var(--ease),opacity .9s}
+.swatches{display:flex;gap:12px;flex-wrap:wrap}
+.sw{--c:#000;position:relative;width:46px;height:46px;border-radius:50%;border:0;background:var(--c);cursor:pointer;box-shadow:inset 0 0 0 3px var(--bg),0 0 0 1px var(--line);transition:transform .5s var(--ease),box-shadow .6s}
+.sw:hover{transform:scale(1.1)}
+.sw[aria-pressed=true]{box-shadow:inset 0 0 0 3px var(--bg),0 0 0 2px var(--ink)}
+.sw svg{position:absolute;inset:-5px;width:56px;height:56px;rotate:-90deg;opacity:0}
+.sw[aria-pressed=true] svg{opacity:1}
+.sw circle{fill:none;stroke:var(--ink);stroke-width:2;stroke-dasharray:163;stroke-dashoffset:163}
+.sw.run circle{animation:ring var(--dur,4s) linear forwards}
+@keyframes ring{to{stroke-dashoffset:0}}
+.pricebox{display:flex;align-items:baseline;gap:12px}
+.price{font-family:Fraunces,serif;font-size:56px;font-weight:500;letter-spacing:-.04em;line-height:1}
+.pnote{font-size:13px;color:var(--soft)}
+.chips{display:flex;flex-direction:column;gap:10px;font-size:13px;font-weight:500}
+.chips span{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:999px;background:var(--card);backdrop-filter:blur(10px);box-shadow:inset 0 0 0 1px var(--line);width:max-content}
+.chips span::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 4px color-mix(in srgb,var(--acc) 22%,transparent);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 8px transparent}}
+.scrollcue{position:absolute;left:50%;bottom:22px;translate:-50% 0;z-index:3;font-size:11px;letter-spacing:.3em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:10px;opacity:.7}
+.scrollcue i{width:1px;height:46px;background:linear-gradient(var(--ink),transparent);animation:cue 2s var(--ease) infinite;transform-origin:top}
+@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
 
-/* stage: groot reliëf-logo achter de stoel */
-.stage{position:relative;aspect-ratio:1/1.02;border-radius:40px;background:radial-gradient(120% 90% at 50% 30%,#fff 0%,var(--bg2) 70%);overflow:hidden;isolation:isolate}
-.stage .emboss{position:absolute;inset:6% 0 auto;text-align:center;font-family:Fraunces,serif;font-weight:600;font-size:clamp(90px,15vw,210px);letter-spacing:-.05em;line-height:1;color:var(--bg2);
-  text-shadow:-2px -2px 3px rgba(255,255,255,.95),3px 4px 8px rgba(120,90,80,.18);z-index:0;user-select:none}
-.stage .floor{position:absolute;left:12%;right:12%;bottom:7%;height:7%;border-radius:50%;background:radial-gradient(closest-side,rgba(60,40,35,.22),transparent);filter:blur(6px);z-index:1}
-.stage img{position:absolute;inset:12% 10% 6%;width:80%;height:82%;object-fit:contain;mix-blend-mode:multiply;z-index:2;transition:opacity .5s var(--ease),transform .9s var(--ease)}
-.stage img.swap{opacity:0;transform:translateY(14px) scale(.98)}
-.stage .tag{position:absolute;z-index:3;background:rgba(255,255,255,.85);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:12px;font-weight:600;box-shadow:0 10px 30px rgba(60,40,35,.08);animation:float 6s ease-in-out infinite}
-.stage .tag.a{top:22%;left:6%}.stage .tag.b{top:46%;right:5%;animation-delay:-2s}.stage .tag.c{bottom:20%;left:8%;animation-delay:-4s}
-@keyframes float{50%{transform:translateY(-8px)}}
+/* grote marquee */
+.mq{padding:46px 0;overflow:hidden;border-block:1px solid var(--line)}
+.mq .t{display:flex;width:max-content;gap:50px;animation:run 30s linear infinite;font-family:Fraunces,serif;font-size:clamp(40px,7vw,110px);letter-spacing:-.04em;line-height:1}
+.mq .t span:nth-child(odd){font-style:italic;color:var(--acc)}
+.mq .t span:nth-child(even){color:transparent;-webkit-text-stroke:1px var(--ink)}
 
-/* kleurkeuze */
-.swatches{display:flex;gap:12px;align-items:center;margin-top:8px}
-.sw{width:38px;height:38px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px var(--line);cursor:pointer;transition:transform .3s var(--ease),box-shadow .3s}
-.sw[aria-pressed=true]{box-shadow:0 0 0 2px var(--ink);transform:scale(1.08)}
-.sw-label{font-size:13px;color:var(--muted);margin-left:6px}
+/* PIN: kleuren horizontaal */
+.pin{position:relative;height:520vh}
+.pin .stick{position:sticky;top:0;height:100svh;overflow:hidden}
+.pin .track{display:flex;height:100%;will-change:transform}
+.panel{--pb:#f3d9d5;--pa:#b9706b;--ph:rgba(255,255,255,.7);--pl:rgba(140,70,64,.3);position:relative;flex:0 0 100vw;height:100%;background:var(--pb);display:grid;place-items:center;overflow:hidden;color:#231b1a}
+.panel .emb{position:absolute;top:50%;left:50%;translate:-50% -55%;font-size:clamp(150px,30vw,520px);color:var(--pb);text-shadow:-3px -3px 3px var(--ph),6px 7px 14px var(--pl)}
+.panel img{position:relative;z-index:2;height:min(70vh,700px);width:auto;filter:drop-shadow(0 50px 40px rgba(0,0,0,.2));transition:transform 1.2s var(--ease)}
+.panel .pinfo{position:absolute;z-index:3;left:max(16px,4vw);bottom:max(30px,6vh);display:flex;flex-direction:column;gap:6px}
+.panel .pinfo b{font-family:Fraunces,serif;font-weight:400;font-style:italic;font-size:clamp(44px,6vw,90px);line-height:1;letter-spacing:-.04em}
+.panel .pinfo small{font-size:12px;letter-spacing:.25em;text-transform:uppercase;opacity:.7}
+.panel .pbuy{position:absolute;z-index:3;right:max(16px,4vw);bottom:max(30px,6vh)}
+.panel .pbuy .btn{background:#231b1a;color:#fff}
+.panel .num{position:absolute;top:max(110px,14vh);right:max(16px,4vw);font-size:12px;letter-spacing:.3em;z-index:3;opacity:.7}
+.panel.dark{color:#f1ebe7}.panel.dark .pbuy .btn{background:#f1ebe7;color:#151312}
+.pin .prog{position:absolute;left:50%;bottom:22px;translate:-50% 0;display:flex;gap:8px;z-index:5}
+.pin .prog i{width:28px;height:3px;border-radius:3px;background:rgba(0,0,0,.18);overflow:hidden;position:relative}
+.pin .prog i b{position:absolute;inset:0;background:#231b1a;transform-origin:left;transform:scaleX(0)}
+.pin .head{position:absolute;top:max(110px,13vh);left:max(16px,4vw);z-index:4;color:#231b1a;mix-blend-mode:normal}
+.pin .head h2{font-size:clamp(30px,3.4vw,52px)}
 
-/* marquee */
-.marquee{background:var(--dark);color:#f2ebe8;overflow:hidden;padding:22px 0}
-.marquee .track{display:flex;gap:56px;width:max-content;animation:scroll 32s linear infinite;font-family:Fraunces,serif;font-size:clamp(22px,3vw,34px);font-style:italic}
-.marquee .track span::after{content:"✦";margin-left:56px;color:var(--rose);font-style:normal}
-@keyframes scroll{to{transform:translateX(-50%)}}
+section{padding:clamp(90px,12vw,170px) 0;position:relative}
+h2{font-family:Fraunces,serif;font-weight:400;font-size:clamp(40px,5.6vw,84px);line-height:.98;letter-spacing:-.04em}
+h2 em{font-style:italic;color:var(--acc);transition:color 1s}
+.sh{display:grid;gap:18px;margin-bottom:60px;max-width:820px}
+.sh p{color:var(--soft);font-size:18px;max-width:34em}
 
-section{padding:clamp(80px,11vw,150px) 0}
-h2{font-family:Fraunces,serif;font-weight:500;font-size:clamp(36px,5.2vw,72px);line-height:1;letter-spacing:-.03em}
-h2 em{font-style:italic;color:var(--rose-d)}
-.sec-head{display:grid;gap:18px;margin-bottom:56px;max-width:760px}
-.sec-head p{color:var(--muted);font-size:18px}
 
-/* features */
-.feat{display:grid;gap:18px}
-@media(min-width:800px){.feat{grid-template-columns:repeat(12,1fr)}}
-.fc{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:34px;position:relative;overflow:hidden;min-height:280px;display:flex;flex-direction:column;justify-content:flex-end;transition:transform .6s var(--ease)}
-.fc:hover{transform:translateY(-4px)}
-.fc .num{position:absolute;top:24px;right:30px;font-family:Fraunces,serif;font-size:90px;line-height:1;color:var(--bg2);font-weight:600}
-.fc h3{font-family:Fraunces,serif;font-weight:500;font-size:28px;letter-spacing:-.02em;margin-bottom:8px}
-.fc p{color:var(--muted)}
-.fc.dark{background:var(--dark);color:#f2ebe8;border-color:var(--dark)}.fc.dark p{color:#b4a9a5}.fc.dark .num{color:#2a2322}
-.fc.rose{background:linear-gradient(150deg,#f3d6d3,#e9b9b5);border-color:#e9c3bf}.fc.rose .num{color:rgba(255,255,255,.5)}.fc.rose p{color:#6e4d4a}
-@media(min-width:800px){.s7{grid-column:span 7}.s5{grid-column:span 5}.s4{grid-column:span 4}}
+/* film: grote sfeerfoto die uitzoomt tijdens scrollen */
+.cine{position:relative;height:220vh}
+.cine .stick{position:sticky;top:0;height:100svh;overflow:hidden;display:grid;place-items:center}
+.cine .frame{position:absolute;inset:0;overflow:hidden;will-change:clip-path;clip-path:inset(12% 14% 12% 14% round 44px)}
+.cine .frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 12%;opacity:0;transition:opacity 1.6s var(--ease);will-change:transform}
+.cine .frame img.on{opacity:1;animation:kb 9s linear forwards}
+@keyframes kb{from{transform:scale(1.06)}to{transform:scale(1)}}
+.cine .cap{position:absolute;z-index:3;left:max(16px,5vw);bottom:max(30px,7vh);color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.25)}
+.cine .cap h2{color:#fff;font-size:clamp(40px,6vw,96px)}
+.cine .cap h2 em{color:#fff}
+.cine .shade{position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(0,0,0,.35),transparent 45%);pointer-events:none}
+.cine .dots{position:absolute;z-index:3;right:max(16px,5vw);bottom:max(36px,7vh);display:flex;gap:8px}
+.cine .dots i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.45);transition:background .4s,transform .4s}
+.cine .dots i.on{background:#fff;transform:scale(1.3)}
 
-/* kleurenshow */
-.colors{background:var(--dark);color:#f2ebe8}
-.colors .sec-head p{color:#b4a9a5}
-.cgrid{display:grid;gap:18px}
-@media(min-width:800px){.cgrid{grid-template-columns:repeat(3,1fr)}}
-.cc{border-radius:var(--r);padding:26px;aspect-ratio:3/4;position:relative;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;justify-content:space-between;transition:transform .6s var(--ease)}
-.cc:hover{transform:translateY(-6px)}
-.cc .em{position:absolute;inset:auto 0 38%;text-align:center;font-family:Fraunces,serif;font-weight:600;font-size:96px;letter-spacing:-.05em;opacity:.55;color:inherit;text-shadow:-1px -1px 2px rgba(255,255,255,.5),2px 3px 6px rgba(0,0,0,.12)}
-.cc img{position:absolute;inset:16% 12% 14%;width:76%;height:70%;object-fit:contain;mix-blend-mode:multiply}
-.cc .meta{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;font-weight:600;color:var(--ink)}
-.cc .pill{position:relative;z-index:2;align-self:flex-start;background:rgba(255,255,255,.7);border-radius:999px;padding:6px 12px;font-size:12px;color:var(--ink);font-weight:600}
-.cc.zwart{background:linear-gradient(170deg,#ece7e4,#d9d1cd)}.cc.zwart .em{color:#d2c9c4}
-.cc.roze{background:linear-gradient(170deg,#f7e3e0,#ecc6c1)}.cc.roze .em{color:#ecc9c4}
-.cc.wit{background:linear-gradient(170deg,#ffffff,#ebe8e6)}.cc.wit .em{color:#e9e5e3}
+/* hotspots */
+.explore{display:grid;gap:40px;align-items:center}
+@media(min-width:1000px){.explore{grid-template-columns:1.1fr 1fr}}
+.xstage{position:relative;aspect-ratio:1/1.05;border-radius:44px;background:linear-gradient(160deg,color-mix(in srgb,#fff 45%,var(--bg)),var(--bg2));overflow:hidden;box-shadow:inset 0 0 0 1px var(--line)}
+.xstage .emb{position:absolute;top:8%;left:0;right:0;text-align:center;font-size:clamp(90px,13vw,200px);color:color-mix(in srgb,#fff 35%,var(--bg))}
+.xstage img{position:absolute;left:50%;bottom:4%;height:88%;width:auto;translate:-50% 0;filter:drop-shadow(0 30px 30px rgba(0,0,0,.18))}
+.hs{position:absolute;z-index:3;width:30px;height:30px;translate:-50% -50%;border-radius:50%;border:0;background:#fff;cursor:pointer;box-shadow:0 0 0 0 rgba(255,255,255,.7),0 6px 20px rgba(0,0,0,.2);animation:hs 2.2s infinite;transition:transform .4s var(--ease),background .4s}
+.hs::after{content:"";position:absolute;inset:10px;border-radius:50%;background:var(--acc);transition:background 1s}
+.hs.on{transform:scale(1.25);background:var(--ink)}
+.hs.on::after{background:#fff}
+@keyframes hs{70%{box-shadow:0 0 0 16px rgba(255,255,255,0),0 6px 20px rgba(0,0,0,.2)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0),0 6px 20px rgba(0,0,0,.2)}}
+.xlist{display:flex;flex-direction:column}
+.xi{padding:22px 0;border-top:1px solid var(--line);cursor:pointer;display:grid;grid-template-columns:52px 1fr auto;gap:14px;align-items:baseline;transition:opacity .5s}
+.xi:last-child{border-bottom:1px solid var(--line)}
+.xi .n{font-size:12px;letter-spacing:.2em;color:var(--soft)}
+.xi h3{font-family:Fraunces,serif;font-weight:400;font-size:clamp(24px,2.2vw,32px);letter-spacing:-.02em;line-height:1.1}
+.xi .v{font-family:Fraunces,serif;font-style:italic;color:var(--acc);font-size:22px;transition:color 1s}
+.xi p{grid-column:2/4;color:var(--soft);max-height:0;overflow:hidden;opacity:0;transition:max-height .8s var(--ease),opacity .6s,margin .6s}
+.xi.on p{max-height:120px;opacity:1;margin-top:8px}
+.xlist:hover .xi:not(:hover):not(.on){opacity:.55}
 
-/* specs */
-.specs{display:grid;gap:40px;align-items:start}
-@media(min-width:960px){.specs{grid-template-columns:1fr 1fr}}
-.spec-list{border-top:1px solid var(--line)}
-.spec-list div{display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid var(--line);font-size:15px}
-.spec-list dt{color:var(--muted)}
-.spec-list dd{font-weight:600;text-align:right}
+/* tellers */
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border-radius:var(--r);overflow:hidden;box-shadow:inset 0 0 0 1px var(--line)}
+@media(min-width:900px){.stats{grid-template-columns:repeat(4,1fr)}}
+.st{background:var(--bg);padding:40px 28px;transition:background-color 1.1s var(--ease)}
+.st b{display:block;font-family:Fraunces,serif;font-weight:400;font-size:clamp(54px,6vw,92px);letter-spacing:-.05em;line-height:1}
+.st b sup{font-size:.4em;letter-spacing:0;margin-left:4px;vertical-align:top;position:relative;top:.3em;color:var(--acc)}
+.st span{display:block;margin-top:10px;color:var(--soft);font-size:14px}
 
-/* vergelijking */
-.cmp{width:100%;border-collapse:collapse;background:var(--card);border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
-.cmp th,.cmp td{padding:18px 20px;text-align:left;border-bottom:1px solid var(--line);font-size:15px}
-.cmp th{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600}
-.cmp td:nth-child(2){background:#f3e6e3;font-weight:600}
+/* schommel-demo */
+.rock{display:grid;gap:40px;align-items:center}
+@media(min-width:1000px){.rock{grid-template-columns:1fr 1fr}}
+.dial{position:relative;aspect-ratio:1;max-width:520px;width:100%;margin:auto}
+.dial svg{width:100%;height:100%;overflow:visible}
+.dial .deg{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
+.dial .deg b{font-family:Fraunces,serif;font-weight:400;font-size:clamp(70px,9vw,130px);letter-spacing:-.05em;line-height:1}
+.dial .deg small{display:block;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--soft);margin-top:6px}
+
+/* sfeer */
+.mood{display:grid;gap:16px}
+@media(min-width:900px){.mood{grid-template-columns:repeat(12,1fr);grid-auto-rows:280px}}
+.mood figure{position:relative;border-radius:var(--r);overflow:hidden;min-height:300px;background:var(--bg2)}
+.mood img{position:absolute;inset:0;width:100%;height:118%;object-fit:cover;will-change:transform}
+.mood figcaption{position:absolute;left:20px;bottom:18px;z-index:2;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.8);backdrop-filter:blur(8px);font-size:12px;font-weight:600;letter-spacing:.05em}
+@media(min-width:900px){.m1{grid-column:span 7;grid-row:span 2}.m2{grid-column:span 5}.m3{grid-column:span 5}.m4{grid-column:span 12}}
+
+/* vergelijking + belofte */
+.cmp{width:100%;border-collapse:collapse;border-radius:var(--r);overflow:hidden;box-shadow:inset 0 0 0 1px var(--line)}
+.cmp th,.cmp td{padding:20px 22px;text-align:left;border-bottom:1px solid var(--line);font-size:15px}
+.cmp th{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);font-weight:600}
+.cmp td:nth-child(2),.cmp th:nth-child(2){background:color-mix(in srgb,#fff 40%,transparent);font-weight:600}
 .cmp tr:last-child td{border-bottom:0}
-.yes{color:var(--rose-d);font-weight:700}.no{color:#b8aeaa}
-.cmp-wrap{overflow-x:auto;border-radius:var(--r)}
-
-/* belofte */
-.promise{display:grid;gap:18px}
+.cmp .y{color:var(--acc)}.cmp .n{opacity:.4}
+.cmpw{overflow-x:auto;border-radius:var(--r)}
+.promise{display:grid;gap:14px;margin-top:16px}
 @media(min-width:800px){.promise{grid-template-columns:repeat(4,1fr)}}
-.pr{padding:30px;border-radius:var(--r);background:var(--card);border:1px solid var(--line)}
-.pr b{display:block;font-family:Fraunces,serif;font-size:40px;font-weight:600;letter-spacing:-.03em;margin-bottom:6px}
-.pr span{color:var(--muted);font-size:14px}
+.pr{padding:30px;border-radius:var(--r);background:var(--card);box-shadow:inset 0 0 0 1px var(--line);transition:transform .6s var(--ease)}
+.pr:hover{transform:translateY(-6px)}
+.pr b{display:block;font-family:Fraunces,serif;font-weight:400;font-size:44px;letter-spacing:-.04em;line-height:1;margin-bottom:10px}
+.pr span{color:var(--soft);font-size:14px}
 
 /* faq */
-.faq{max-width:860px}
-details{border-bottom:1px solid var(--line);padding:24px 0}
-summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;font-family:Fraunces,serif;font-size:22px;font-weight:500}
+.faq{max-width:900px}
+details{border-bottom:1px solid var(--line);padding:26px 0}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;font-family:Fraunces,serif;font-size:clamp(20px,2vw,26px);font-weight:400;letter-spacing:-.01em}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font-family:Inter;font-weight:300;font-size:28px;line-height:1;transition:transform .3s}
-details[open] summary::after{transform:rotate(45deg)}
-details p{color:var(--muted);margin-top:12px;max-width:44em}
+summary::after{content:"+";font-family:Inter;font-weight:300;font-size:30px;line-height:1;transition:transform .5s var(--ease)}
+details[open] summary::after{transform:rotate(135deg)}
+details p{color:var(--soft);margin-top:12px;max-width:46em}
 
-/* nieuwsbrief */
-.club{background:linear-gradient(140deg,#efd2ce,#f6ebe8 60%);border-radius:40px;padding:clamp(40px,7vw,90px);position:relative;overflow:hidden}
-.club .em{position:absolute;right:-2%;bottom:-12%;font-family:Fraunces,serif;font-weight:600;font-size:clamp(120px,22vw,300px);letter-spacing:-.05em;color:rgba(255,255,255,.45);line-height:1;pointer-events:none}
-.club form{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px;position:relative;max-width:560px}
-.club input{flex:1 1 240px;padding:18px 24px;border-radius:999px;border:1px solid #e1c6c2;background:#fff;font:inherit;font-size:15px}
-.club small{display:block;margin-top:14px;color:#8a6c68;position:relative}
+/* club */
+.club{position:relative;overflow:hidden;border-radius:48px;padding:clamp(44px,8vw,110px);background:var(--ink);color:var(--bg);transition:background-color 1s,color 1s}
+.club .blob{position:absolute;width:60vmax;height:60vmax;right:-20vmax;top:-25vmax;border-radius:50%;background:radial-gradient(closest-side,var(--acc),transparent);opacity:.55;filter:blur(30px);animation:blob 14s ease-in-out infinite alternate}
+@keyframes blob{to{transform:translate(-18vmax,22vmax) scale(1.2)}}
+.club .emb2{position:absolute;right:-1%;bottom:-14%;font-family:Fraunces,serif;font-weight:600;font-size:clamp(120px,24vw,360px);letter-spacing:-.06em;line-height:1;color:transparent;-webkit-text-stroke:1px color-mix(in srgb,var(--bg) 25%,transparent)}
+.club h2{color:var(--bg);position:relative}.club h2 em{color:var(--acc)}
+.club p{position:relative;opacity:.8;max-width:30em;margin-top:16px}
+.club form{position:relative;display:flex;gap:10px;flex-wrap:wrap;margin-top:34px;max-width:580px}
+.club input{flex:1 1 240px;padding:19px 26px;border-radius:999px;border:0;background:color-mix(in srgb,var(--bg) 12%,transparent);color:var(--bg);font:inherit;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--bg) 30%,transparent)}
+.club input::placeholder{color:color-mix(in srgb,var(--bg) 60%,transparent)}
+.club .btn{background:var(--bg);color:var(--ink)}
+.club small{position:relative;display:block;margin-top:14px;opacity:.6}
 
-footer{padding:70px 0 120px;border-top:1px solid var(--line);margin-top:80px;font-size:14px;color:var(--muted)}
+footer{padding:80px 0 130px;font-size:14px;color:var(--soft)}
 footer .wrap{display:grid;gap:30px}
-@media(min-width:800px){footer .wrap{grid-template-columns:2fr 1fr 1fr}}
-footer h4{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);margin-bottom:14px}
-footer li{list-style:none;margin:6px 0}
+@media(min-width:800px){footer .wrap{grid-template-columns:2fr 1fr 1fr 1fr}}
+footer h4{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);margin-bottom:14px}
+footer li{list-style:none;margin:7px 0}
+footer .huge{grid-column:1/-1;font-family:Fraunces,serif;font-size:clamp(90px,22vw,340px);letter-spacing:-.06em;line-height:.8;color:var(--ink);opacity:.95;margin-top:40px}
+footer .huge i{font-style:normal;color:var(--acc)}
 
-/* sticky koopbalk */
-.buybar{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;background:rgba(20,17,17,.92);backdrop-filter:blur(14px);color:#fff;border-radius:999px;padding:10px 10px 10px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px;transform:translateY(140%);transition:transform .5s var(--ease);max-width:620px;margin:auto}
+/* koopbalk */
+.buybar{position:fixed;left:12px;right:12px;bottom:14px;z-index:80;margin:auto;max-width:560px;display:flex;align-items:center;gap:12px;padding:8px 8px 8px 8px;border-radius:999px;background:color-mix(in srgb,var(--ink) 92%,transparent);backdrop-filter:blur(16px);color:var(--bg);transform:translateY(150%);transition:transform .7s var(--ease),background-color 1s,color 1s}
 .buybar.show{transform:none}
-.buybar .bb-t{font-size:14px}.buybar .bb-t b{font-family:Fraunces,serif;font-size:18px;margin-left:6px}
-.buybar .btn{background:var(--rose);color:var(--ink);padding:13px 22px}
+.buybar .th{width:48px;height:48px;border-radius:50%;background:var(--bg);display:grid;place-items:center;overflow:hidden;flex:0 0 auto;transition:background-color 1s}
+.buybar .th img{height:42px;width:auto}
+.buybar .tx{flex:1;font-size:13px;line-height:1.25}.buybar .tx b{display:block;font-family:Fraunces,serif;font-size:17px;font-weight:500}
+.buybar .btn{background:var(--bg);color:var(--ink);padding:14px 22px}
 
 /* popup */
-.pop{position:fixed;inset:0;z-index:80;background:rgba(20,17,17,.45);display:none;place-items:center;padding:16px}
-.pop.open{display:grid}
-.pop .box{background:var(--bg);border-radius:32px;max-width:460px;width:100%;padding:40px 32px;position:relative;text-align:center}
-.pop .x{position:absolute;top:16px;right:20px;background:none;border:0;font-size:26px;cursor:pointer;color:var(--muted)}
-.pop h3{font-family:Fraunces,serif;font-size:40px;font-weight:500;letter-spacing:-.03em;line-height:1.05;margin:10px 0}
-.pop input{width:100%;padding:16px 22px;border-radius:999px;border:1px solid var(--line);font:inherit;margin:18px 0 10px}
-.pop .btn{width:100%;justify-content:center}
+.pop{position:fixed;inset:0;z-index:120;background:rgba(20,15,14,.5);backdrop-filter:blur(6px);display:grid;place-items:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .5s}
+.pop.open{opacity:1;pointer-events:auto}
+.pop .box{position:relative;overflow:hidden;background:var(--bg);border-radius:36px;max-width:480px;width:100%;padding:44px 34px 34px;text-align:center;transform:translateY(30px) scale(.97);transition:transform .7s var(--ease)}
+.pop.open .box{transform:none}
+.pop .box img{height:170px;width:auto;margin:0 auto 8px;filter:drop-shadow(0 20px 20px rgba(0,0,0,.18))}
+.pop .x{position:absolute;top:16px;right:20px;background:none;border:0;font-size:28px;cursor:pointer;opacity:.6}
+.pop h3{font-family:Fraunces,serif;font-size:40px;font-weight:400;letter-spacing:-.04em;line-height:1.02;margin:8px 0}
+.pop h3 em{color:var(--acc)}
+.pop input{width:100%;padding:17px 22px;border-radius:999px;border:0;box-shadow:inset 0 0 0 1px var(--line);background:rgba(255,255,255,.7);font:inherit;margin:18px 0 10px}
+.pop .btn{width:100%}
 
 /* reveal */
-.rv{opacity:0;transform:translateY(30px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease)}
 .rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.hero h1 .ln>span{transform:none}.hero .lead{opacity:1}}
+@media(max-width:1199px){
+  .hero{padding-top:120px}
+  .hero .grid{text-align:center}
+  .hero .side{align-items:center}
+  .chairstage{height:50vh;order:-2}
+  .side.r{order:-1;margin-bottom:34px}
+  .hero .lead{margin-inline:auto}
+  .chips{flex-direction:row;flex-wrap:wrap;justify-content:center}
+  .hero .big{top:calc(105px + 9vh);translate:-50% 0;font-size:clamp(110px,30vw,240px)}
+  .cine .frame img{object-position:60% 15%}
+  .hero .grid{max-width:640px;margin-inline:auto}
+  .side.r{flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:center;gap:16px 22px}
+  .side.r .cname{width:100%;text-align:center}
+  .scrollcue{display:none}
+}
 </style>
 </head>
 <body>
 
-<div class="topbar"><div class="wrap">
-  <span>Gratis verzending NL &amp; BE</span><span class="t2">30 dagen proefzitten</span><span class="t3">2 jaar garantie</span>
+<div class="topbar"><div class="run">
+  <span>Gratis verzending NL &amp; BE</span><span>30 dagen proefzitten</span><span>Vijf kleuren</span><span>2 jaar garantie</span><span>Veilig betalen met iDEAL</span>
+  <span>Gratis verzending NL &amp; BE</span><span>30 dagen proefzitten</span><span>Vijf kleuren</span><span>2 jaar garantie</span><span>Veilig betalen met iDEAL</span>
 </div></div>
 
-<nav class="main" id="nav"><div class="wrap">
-  <a href="#" class="logo">mhyson<span class="dot">.</span></a>
-  <div class="links"><a href="#stoel">De stoel</a><a href="#kleuren">Kleuren</a><a href="#specs">Specs</a><a href="#faq">FAQ</a></div>
-  <a href="#bestel" class="btn" data-buy>Bestel · €295</a>
-</div></nav>
+<nav class="main" id="nav"><div class="wrap"><div class="bar">
+  <a href="#top" class="logo">mhyson<i>.</i></a>
+  <div class="links"><a href="#kleuren">Kleuren</a><a href="#ontdek">Ontdek</a><a href="#sfeer">Sfeer</a><a href="#faq">FAQ</a></div>
+  <a href="#" class="btn" data-buy>Bestel · €295</a>
+</div></div></nav>
 
-<header class="hero" id="bestel"><div class="wrap">
-  <div class="rv">
-    <div class="eyebrow">mhyson. Air Chair</div>
-    <h1>Zit beter.<br><em>Werk langer.</em></h1>
-    <p class="lead">Ademende mesh, een hoofdsteun die meebeweegt, armleuningen die wegklappen als je ze niet nodig hebt. Ontworpen voor lange dagen achter je bureau.</p>
-    <div class="price-row"><span class="price">€295</span><span class="price-note">incl. btw · gratis bezorgd</span></div>
-    <div class="swatches" role="group" aria-label="Kies je kleur">
-      <button class="sw" data-color="zwart" style="background:#1c1a19" aria-pressed="true" aria-label="Zwart"></button>
-      <button class="sw" data-color="roze" style="background:#e8b8b3" aria-pressed="false" aria-label="Roze"></button>
-      <button class="sw" data-color="wit" style="background:#f4f2f0" aria-pressed="false" aria-label="Wit"></button>
-      <span class="sw-label" id="swLabel">Zwart</span>
+<header class="hero" id="top">
+  <div class="glow"></div>
+  <div class="big emb" id="bigLogo">mhyson</div>
+  <div class="wrap grid">
+    <div class="side">
+      <div class="eyebrow">mhyson. Air Chair</div>
+      <h1><span class="ln"><span>Zit beter.</span></span><span class="ln"><span><em>Werk langer.</em></span></span></h1>
+      <p class="lead">Ademende mesh, een hoofdsteun die meedraait en armleuningen die wegklappen. Gemaakt voor lange dagen, in vijf kleuren die je werkplek mooier maken.</p>
+      <div class="chips"><span>Schommelfunctie 90° tot 110°</span><span>Opklapbare armleuningen</span></div>
     </div>
-    <div class="cta-row" style="margin-top:28px">
-      <a href="#" class="btn" data-buy>In winkelwagen</a>
-      <a href="#stoel" class="btn ghost">Ontdek de stoel</a>
+    <div class="chairstage" id="stage">
+      <div class="floor"></div>
+      <div class="tilt" id="tilt"><img id="heroImg" src="img/stoel-roze.webp" alt="mhyson. Air Chair in Blush"></div>
     </div>
-    <div class="trust"><span>Gratis verzending</span><span>30 dagen proefzitten</span><span>Veilig betalen met iDEAL</span></div>
+    <div class="side r">
+      <div class="cname"><span id="cname">Blush</span></div>
+      <div class="swatches" id="swatches" role="group" aria-label="Kies je kleur"></div>
+      <div class="pricebox"><span class="price">€295</span><span class="pnote">incl. btw<br>gratis bezorgd</span></div>
+      <a href="#" class="btn" data-buy>In winkelwagen <span class="arr">→</span></a>
+    </div>
   </div>
-  <div class="stage rv" aria-hidden="true">
-    <div class="emboss">mhyson</div>
-    <div class="floor"></div>
-    <img id="heroImg" src="img/stoel-zwart.jpg" alt="mhyson. Air Chair">
-    <div class="tag a">Verstelbare hoofdsteun</div>
-    <div class="tag b">Opklapbare armleuningen</div>
-    <div class="tag c">Schommelfunctie</div>
-  </div>
-</div></header>
+  <div class="scrollcue">Scroll<i></i></div>
+</header>
 
-<div class="marquee"><div class="track">
-  <span>Ademende mesh</span><span>Hoofdsteun</span><span>Lendensteun</span><span>Opklapbare armen</span><span>Schommelfunctie</span><span>360° draaibaar</span>
-  <span>Ademende mesh</span><span>Hoofdsteun</span><span>Lendensteun</span><span>Opklapbare armen</span><span>Schommelfunctie</span><span>360° draaibaar</span>
+<div class="mq"><div class="t">
+  <span>Blush</span><span>Sand</span><span>Sky</span><span>Stone</span><span>Midnight</span><span>Blush</span><span>Sand</span><span>Sky</span><span>Stone</span><span>Midnight</span>
 </div></div>
 
-<section id="stoel"><div class="wrap">
-  <div class="sec-head rv">
-    <div class="eyebrow">Ontworpen rond jouw rug</div>
-    <h2>Elk detail doet<br><em>iets voor je.</em></h2>
-    <p>Geen gimmicks. Vijf dingen die je na een werkdag écht merkt.</p>
+<div class="pin" id="kleuren">
+  <div class="stick">
+    <div class="head"><div class="eyebrow" style="color:inherit;opacity:.7">Vijf kleuren · één stoel</div><h2>Welke past<br><em style="color:inherit">bij jou?</em></h2></div>
+    <div class="track" id="track"></div>
+    <div class="prog" id="prog"></div>
   </div>
-  <div class="feat">
-    <div class="fc dark s7 rv"><span class="num">01</span><h3>Hoofdsteun die meegaat</h3><p>Stel hoogte en hoek in tot je nek ontspannen rust. Ideaal als je achterover leunt tijdens een call.</p></div>
-    <div class="fc rose s5 rv"><span class="num">02</span><h3>Armen die wegklappen</h3><p>Klap ze omhoog en schuif helemaal aan bij je bureau. Of ga in kleermakerszit zitten. Jouw stoel, jouw houding.</p></div>
-    <div class="fc s4 rv"><span class="num">03</span><h3>Ondersteuning onderrug</h3><p>Een gevormde lendensteun houdt je onderrug in de natuurlijke S-curve.</p></div>
-    <div class="fc s4 rv"><span class="num">04</span><h3>Mesh die ademt</h3><p>Lucht stroomt door de rugleuning. Geen klamme rug in de zomer.</p></div>
-    <div class="fc s4 rv"><span class="num">05</span><h3>Schommelen of vast</h3><p>Leun ontspannen achterover of zet de rugleuning vast als je gefocust wilt werken.</p></div>
-  </div>
-</div></section>
+</div>
 
-<section class="colors" id="kleuren"><div class="wrap">
-  <div class="sec-head rv">
-    <div class="eyebrow">Drie kleuren</div>
-    <h2>Kies de kleur<br><em>van je werkplek.</em></h2>
-    <p>Zelfde comfort, drie karakters. Klik op een kleur om hem bovenaan te bekijken.</p>
-  </div>
-  <div class="cgrid">
-    <a href="#bestel" class="cc zwart rv" data-pick="zwart"><span class="pill">Meest gekozen</span><div class="em">mhyson</div><img src="img/stoel-zwart.jpg" alt="Zwart"><div class="meta"><span>Midnight Black</span><span>€295</span></div></a>
-    <a href="#bestel" class="cc roze rv" data-pick="roze"><span class="pill">Nieuw</span><div class="em">mhyson</div><img src="img/stoel-roze.jpg" data-fallback alt="Roze"><div class="meta"><span>Blush Pink</span><span>€295</span></div></a>
-    <a href="#bestel" class="cc wit rv" data-pick="wit"><span class="pill">Studio</span><div class="em">mhyson</div><img src="img/stoel-wit.jpg" data-fallback alt="Wit"><div class="meta"><span>Cloud White</span><span>€295</span></div></a>
-  </div>
-</div></section>
+<div class="cine" id="cine"><div class="stick">
+  <div class="frame" id="cframe"></div><div class="shade"></div>
+  <div class="cap"><div class="eyebrow" style="color:#fff;opacity:.85">mhyson. at home</div><h2 id="ctitle">Blush.<br><em>Zacht, licht, rustig.</em></h2></div>
+  <div class="dots" id="cdots"></div>
+</div></div>
 
-<section id="specs"><div class="wrap specs">
-  <div class="sec-head rv" style="margin:0">
-    <div class="eyebrow">Specificaties</div>
-    <h2>Alles wat je<br><em>wilt weten.</em></h2>
-    <p>Binnen 15 minuten in elkaar gezet. Al het gereedschap zit in de doos.</p>
+<section id="ontdek"><div class="wrap">
+  <div class="sh rv"><div class="eyebrow">Ontdek de stoel</div><h2>Elk detail doet<br><em>iets voor je rug.</em></h2><p>Tik op een punt of op een onderdeel. Dit zijn de dingen die je na een werkdag echt merkt.</p></div>
+  <div class="explore">
+    <div class="xstage rv" id="xstage">
+      <div class="emb">mhyson</div>
+      <img id="xImg" src="img/stoel-roze.webp" alt="">
+    </div>
+    <div class="xlist rv d1" id="xlist"></div>
   </div>
-  <dl class="spec-list rv">
-    <div><dt>Rugleuning</dt><dd>Ademende mesh met lendensteun</dd></div>
-    <div><dt>Hoofdsteun</dt><dd>Verstelbaar in hoogte en hoek</dd></div>
-    <div><dt>Armleuningen</dt><dd>Opklapbaar</dd></div>
-    <div><dt>Kantelfunctie</dt><dd>Schommelen, vergrendelbaar</dd></div>
-    <div><dt>Zithoogte</dt><dd>Traploos via gasveer</dd></div>
-    <div><dt>Onderstel</dt><dd>Stervoet, 5 zwenkwielen, 360° draaibaar</dd></div>
-    <div><dt>Kleuren</dt><dd>Zwart · Roze · Wit</dd></div>
-    <div><dt>Montage</dt><dd>± 15 minuten</dd></div>
-  </dl>
 </div></section>
 
 <section style="padding-top:0"><div class="wrap">
-  <div class="sec-head rv">
-    <div class="eyebrow">Vergelijk</div>
-    <h2>Meer stoel<br><em>voor je geld.</em></h2>
+  <div class="stats rv" id="stats">
+    <div class="st"><b data-to="150">0<sup>kg</sup></b><span>maximale belasting</span></div>
+    <div class="st"><b data-to="110">0<sup>°</sup></b><span>achterover schommelen</span></div>
+    <div class="st"><b data-to="8">0<sup>cm</sup></b><span>hoofdsteun omhoog of omlaag</span></div>
+    <div class="st"><b data-to="30">0<sup>°</sup></b><span>hoofdsteun kantelen</span></div>
   </div>
-  <div class="cmp-wrap rv"><table class="cmp">
+</div></section>
+
+<section style="padding-top:0"><div class="wrap rock">
+  <div class="sh rv" style="margin:0">
+    <div class="eyebrow">Schommelfunctie</div>
+    <h2>Leun achterover.<br><em>Of zet hem vast.</em></h2>
+    <p>De rugleuning schommelt mee van 90° tot 110°. Even ontspannen tussen twee calls, en daarna weer rechtop en gefocust. Je zet hem met één hendel vast in elke stand.</p>
+  </div>
+  <div class="dial rv d1" aria-hidden="true">
+    <svg viewBox="0 0 400 400">
+      <circle cx="200" cy="200" r="170" fill="none" stroke="currentColor" stroke-opacity=".12" stroke-width="1"/>
+      <path id="arcBg" d="" fill="none" stroke="currentColor" stroke-opacity=".15" stroke-width="14" stroke-linecap="round"/>
+      <path id="arc" d="" fill="none" stroke="var(--acc)" stroke-width="14" stroke-linecap="round"/>
+      <g id="ticks"></g>
+      <line id="needle" x1="200" y1="200" x2="200" y2="52" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="200" cy="200" r="9" fill="var(--ink)"/>
+    </svg>
+    <div class="deg"><div><b id="degNum">90°</b><small>rugleuning</small></div></div>
+  </div>
+</div></section>
+
+<section id="sfeer" style="padding-top:0"><div class="wrap">
+  <div class="sh rv"><div class="eyebrow">In het echt</div><h2>Thuis, op kantoor,<br><em>of in je studio.</em></h2></div>
+  <div class="mood" id="mood">
+    <figure class="m1 rv"><img data-par src="img/sfeer-beige.webp" alt="mhyson. Air Chair in Sand thuis"><figcaption>Sand · thuiswerkplek</figcaption></figure>
+    <figure class="m2 rv d1"><img data-par src="img/sfeer-beige-kantoor.webp" alt="mhyson. Air Chair in Sand op kantoor"><figcaption>Sand · kantoor</figcaption></figure>
+    <figure class="m3 rv d2"><img data-par src="img/sfeer-zwart-kantoor.webp" alt="mhyson. Air Chair in Midnight"><figcaption>Midnight · kantoor</figcaption></figure>
+    <figure class="m4 rv"><img data-par src="img/sfeer-duo-kantoor.webp" alt="mhyson. Air Chair op kantoor"><figcaption>Ook voor teams · offerte vanaf 5 stoelen</figcaption></figure>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="sh rv"><div class="eyebrow">Vergelijk</div><h2>Meer stoel<br><em>voor je geld.</em></h2></div>
+  <div class="cmpw rv"><table class="cmp">
     <thead><tr><th></th><th>mhyson. Air Chair</th><th>Gewone bureaustoel</th></tr></thead>
     <tbody>
-      <tr><td>Verstelbare hoofdsteun</td><td class="yes">✓</td><td class="no">✕</td></tr>
-      <tr><td>Opklapbare armleuningen</td><td class="yes">✓</td><td class="no">✕</td></tr>
-      <tr><td>Lendensteun</td><td class="yes">✓</td><td class="no">Soms</td></tr>
-      <tr><td>Ademende mesh</td><td class="yes">✓</td><td class="no">Stof of kunstleer</td></tr>
-      <tr><td>Schommelfunctie</td><td class="yes">✓</td><td class="no">✕</td></tr>
-      <tr><td>30 dagen proefzitten</td><td class="yes">✓</td><td class="no">✕</td></tr>
+      <tr><td>Hoofdsteun, 8 cm verstelbaar en 30° kantelbaar</td><td class="y">✓</td><td class="n">✕</td></tr>
+      <tr><td>Opklapbare armleuningen</td><td class="y">✓</td><td class="n">✕</td></tr>
+      <tr><td>Verstelbare lendensteun</td><td class="y">✓</td><td class="n">Soms</td></tr>
+      <tr><td>Ademende mesh rugleuning</td><td class="y">✓</td><td class="n">Stof of kunstleer</td></tr>
+      <tr><td>Schommelen 90° tot 110°</td><td class="y">✓</td><td class="n">✕</td></tr>
+      <tr><td>Vijf kleuren</td><td class="y">✓</td><td class="n">Zwart of grijs</td></tr>
+      <tr><td>30 dagen proefzitten</td><td class="y">✓</td><td class="n">✕</td></tr>
     </tbody>
   </table></div>
-</div></section>
-
-<section style="padding-top:0"><div class="wrap">
   <div class="promise">
     <div class="pr rv"><b>30</b><span>dagen proefzitten. Niet blij? Je krijgt je geld terug.</span></div>
-    <div class="pr rv"><b>€0</b><span>verzendkosten naar Nederland en België.</span></div>
-    <div class="pr rv"><b>2 jaar</b><span>garantie op het frame en de mechaniek.</span></div>
-    <div class="pr rv"><b>15 min</b><span>en je zit. Montage zonder gedoe.</span></div>
+    <div class="pr rv d1"><b>€0</b><span>verzendkosten naar Nederland en België.</span></div>
+    <div class="pr rv d2"><b>2 jaar</b><span>garantie op het frame en de mechaniek.</span></div>
+    <div class="pr rv d3"><b>15 min</b><span>en je zit. Gereedschap zit in de doos.</span></div>
   </div>
 </div></section>
 
 <section id="faq" style="padding-top:0"><div class="wrap faq">
-  <div class="sec-head rv"><div class="eyebrow">Veelgestelde vragen</div><h2>Goed om<br><em>te weten.</em></h2></div>
-  <details class="rv"><summary>Hoe snel heb ik mijn stoel?</summary><p>Je stoel wordt verzonden vanuit een Europees magazijn. Je ontvangt een track &amp; trace zodra hij onderweg is.</p></details>
-  <details class="rv"><summary>Wat als de stoel niet bevalt?</summary><p>Je hebt 30 dagen om hem thuis uit te proberen. Past hij niet bij je? Stuur hem terug en je krijgt het volledige aankoopbedrag terug.</p></details>
+  <div class="sh rv"><div class="eyebrow">Veelgestelde vragen</div><h2>Goed om<br><em>te weten.</em></h2></div>
+  <details class="rv"><summary>Hoe snel heb ik mijn stoel?</summary><p>Je stoel komt uit een Europees magazijn en is meestal binnen 3 tot 7 werkdagen bij je. Je krijgt een track &amp; trace zodra hij onderweg is.</p></details>
+  <details class="rv"><summary>Voor welke lengte is de stoel geschikt?</summary><p>De Air Chair past het best bij een lengte van ongeveer 155 tot 185 cm. De zithoogte is traploos verstelbaar van 46 tot 54 cm.</p></details>
+  <details class="rv"><summary>Wat zijn de afmetingen?</summary><p>De stoel is 116 tot 123,5 cm hoog (met hoofdsteun), de zitting is 50 cm breed en 49 cm diep en de stervoet is 67,5 cm breed. Hij draagt maximaal 150 kg.</p></details>
+  <details class="rv"><summary>Wat als de stoel niet bevalt?</summary><p>Je hebt 30 dagen om hem thuis uit te proberen. Past hij niet bij je? Stuur hem terug en je krijgt het aankoopbedrag terug.</p></details>
   <details class="rv"><summary>Is montage lastig?</summary><p>Nee. Alles zit in de doos, inclusief gereedschap. De meeste mensen zitten binnen een kwartier.</p></details>
-  <details class="rv"><summary>Hoe betaal ik?</summary><p>Met iDEAL, creditcard, Apple Pay of Bancontact. Betalen gaat via een beveiligde verbinding.</p></details>
-  <details class="rv"><summary>Kan ik op rekening bestellen voor mijn bedrijf?</summary><p>Ja. Mail ons voor een zakelijke offerte vanaf 5 stoelen, dan ontvang je een factuur met btw.</p></details>
+  <details class="rv"><summary>Kan ik bestellen voor mijn bedrijf?</summary><p>Ja. Mail ons voor een zakelijke offerte vanaf 5 stoelen, dan krijg je een factuur met btw.</p></details>
 </div></section>
 
 <div class="wrap"><div class="club rv" id="club">
-  <div class="em">mhyson</div>
-  <div class="eyebrow">mhyson. club</div>
+  <div class="blob"></div><div class="emb2">mhyson</div>
+  <div class="eyebrow" style="position:relative">mhyson. club</div>
   <h2 style="margin-top:14px">€25 korting<br><em>op je stoel.</em></h2>
-  <p style="color:#6e4d4a;margin-top:14px;max-width:30em;position:relative">Schrijf je in en ontvang je kortingscode direct in je mail. Plus tips voor een gezondere werkplek.</p>
+  <p>Schrijf je in en je kortingscode staat direct in je mail. Plus af en toe een tip voor een fijnere werkplek.</p>
   <form class="nl-form"><input type="email" name="email" required placeholder="Je e-mailadres"><button class="btn" type="submit">Stuur mijn code</button></form>
   <small>Geen spam. Uitschrijven kan altijd met één klik.</small>
 </div></div>
 
 <footer><div class="wrap">
-  <div><div class="logo">mhyson<span class="dot">.</span></div><p style="margin-top:12px;max-width:26em">Design voor elke dag. Gemaakt om lang mee te gaan.</p></div>
-  <div><h4>Shop</h4><ul><li><a href="#bestel">Air Chair</a></li><li><a href="#kleuren">Kleuren</a></li><li><a href="#club">€25 korting</a></li></ul></div>
-  <div><h4>Service</h4><ul><li><a href="#faq">Veelgestelde vragen</a></li><li><a href="mailto:hello@mhyson.com">hello@mhyson.com</a></li><li>Verzending &amp; retour</li></ul></div>
+  <div><div class="logo">mhyson<i>.</i></div><p style="margin-top:12px;max-width:26em">Design voor elke dag. Gemaakt om lang mee te gaan.</p></div>
+  <div><h4>Shop</h4><ul><li><a href="#top">Air Chair</a></li><li><a href="#kleuren">Kleuren</a></li><li><a href="#club">€25 korting</a></li></ul></div>
+  <div><h4>Service</h4><ul><li><a href="#faq">Veelgestelde vragen</a></li><li>Verzending &amp; retour</li><li><a href="mailto:hello@mhyson.com">hello@mhyson.com</a></li></ul></div>
+  <div><h4>Volg ons</h4><ul><li>Instagram</li><li>TikTok</li><li>Pinterest</li></ul></div>
+  <div class="huge">mhyson<i>.</i></div>
 </div></footer>
 
-<div class="buybar" id="buybar"><span class="bb-t">Air Chair <b>€295</b></span><a href="#" class="btn" data-buy>Bestel nu</a></div>
+<div class="buybar" id="buybar">
+  <div class="th"><img id="bbImg" src="img/stoel-roze.webp" alt=""></div>
+  <div class="tx"><b>Air Chair · <span id="bbName">Blush</span></b>€295 · gratis bezorgd</div>
+  <a href="#" class="btn" data-buy>Bestel</a>
+</div>
 
 <div class="pop" id="pop" role="dialog" aria-modal="true" aria-labelledby="popT">
   <div class="box">
     <button class="x" aria-label="Sluiten" data-close>×</button>
+    <img id="popImg" src="img/stoel-roze.webp" alt="">
     <div class="eyebrow">Welkom bij mhyson.</div>
-    <h3 id="popT">€25 korting<br>op je eerste stoel</h3>
-    <p style="color:var(--muted)">Laat je mail achter en je code staat binnen een minuut in je inbox.</p>
-    <form class="nl-form"><input type="email" name="email" required placeholder="Je e-mailadres"><button class="btn rose" type="submit">Stuur mijn code</button></form>
+    <h3 id="popT">€25 korting<br><em>op je eerste stoel</em></h3>
+    <p style="color:var(--soft)">Laat je mail achter en je code staat binnen een minuut in je inbox.</p>
+    <form class="nl-form"><input type="email" name="email" required placeholder="Je e-mailadres"><button class="btn" type="submit">Stuur mijn code</button></form>
   </div>
 </div>
 
 <script>
-// Vul hier de Shopify-checkoutlinks per kleur in zodra de winkel klaarstaat
-const CHECKOUT = {zwart:"#", roze:"#", wit:"#"};
-// Inschrijvingen voor e-mailmarketing (Klaviyo/Mailchimp/FormSubmit-endpoint)
+// Shopify-checkoutlinks per kleur invullen zodra de winkel klaarstaat
+const CHECKOUT = {roze:"#", beige:"#", blauw:"#", grijs:"#", zwart:"#"};
+// Endpoint voor e-mailinschrijvingen (Klaviyo, Mailchimp of FormSubmit)
 const NEWSLETTER_ENDPOINT = "";
 
-const NAMES = {zwart:"Zwart", roze:"Roze", wit:"Wit"};
-let color = "zwart";
-const heroImg = document.getElementById('heroImg');
+const COLORS = [
+  {k:"roze",  n:"Blush",    sw:"#e9b5b0", bg:"#f3d9d5", bg2:"#ecc9c4", acc:"#b9706b", ink:"#231b1a", soft:"#6f5552", hi:"rgba(255,255,255,.75)", lo:"rgba(140,70,64,.28)"},
+  {k:"beige", n:"Sand",     sw:"#ece3d3", bg:"#efe6d9", bg2:"#e5d9c7", acc:"#9b7b54", ink:"#241e17", soft:"#6f6252", hi:"rgba(255,255,255,.8)",  lo:"rgba(120,95,60,.26)"},
+  {k:"blauw", n:"Sky",      sw:"#8fc3c3", bg:"#d7e8e7", bg2:"#c4dcdb", acc:"#4f8a88", ink:"#15201f", soft:"#4f6564", hi:"rgba(255,255,255,.75)", lo:"rgba(50,95,95,.28)"},
+  {k:"grijs", n:"Stone",    sw:"#8d8b88", bg:"#e3e1de", bg2:"#d5d2ce", acc:"#6d6964", ink:"#1d1c1b", soft:"#5f5c58", hi:"rgba(255,255,255,.8)",  lo:"rgba(70,65,60,.28)"},
+  {k:"zwart", n:"Midnight", sw:"#1d1b1a", bg:"#1b1817", bg2:"#26221f", acc:"#d39a8f", ink:"#f2ebe7", soft:"#a99d97", hi:"rgba(255,255,255,.07)", lo:"rgba(0,0,0,.65)"}
+];
+const $ = s => document.querySelector(s);
+const root = document.documentElement;
+const img = k => `img/stoel-${k}.webp`;
+COLORS.forEach(c => { const i = new Image(); i.src = img(c.k); });
 
-// Kleurfoto ontbreekt nog? Dan valt hij terug op de zwarte foto
-function srcFor(c){return `img/stoel-${c}.jpg`}
-document.querySelectorAll('img[data-fallback]').forEach(i=>i.addEventListener('error',()=>{i.src='img/stoel-zwart.jpg'},{once:true}));
-
-function setColor(c){
-  color = c;
-  document.querySelectorAll('.sw').forEach(b=>b.setAttribute('aria-pressed', b.dataset.color===c));
-  document.getElementById('swLabel').textContent = NAMES[c];
-  heroImg.classList.add('swap');
-  const next = new Image();
-  next.onload = ()=>{heroImg.src = next.src; requestAnimationFrame(()=>heroImg.classList.remove('swap'))};
-  next.onerror = ()=>{heroImg.src = srcFor('zwart'); heroImg.classList.remove('swap')};
-  next.src = srcFor(c);
-  document.querySelectorAll('[data-buy]').forEach(a=>a.href = CHECKOUT[c]);
+/* ---------- kleurwissel (hele site kleurt mee) ---------- */
+let cur = 0, auto = true, timer;
+const DUR = 4200;
+const sws = $('#swatches');
+COLORS.forEach((c, i) => {
+  const b = document.createElement('button');
+  b.className = 'sw'; b.style.setProperty('--c', c.sw); b.setAttribute('aria-label', c.n); b.setAttribute('aria-pressed', i === 0);
+  b.innerHTML = '<svg viewBox="0 0 56 56"><circle cx="28" cy="28" r="26"/></svg>';
+  b.addEventListener('click', () => { auto = false; setColor(i); });
+  sws.appendChild(b);
+});
+function paint(c){
+  const v = {bg:c.bg,bg2:c.bg2,acc:c.acc,ink:c.ink,soft:c.soft,hi:c.hi,lo:c.lo};
+  for (const k in v) root.style.setProperty('--' + k, v[k]);
+  root.style.setProperty('--line', c.k === 'zwart' ? 'rgba(255,255,255,.12)' : 'rgba(35,27,26,.12)');
+  root.style.setProperty('--card', c.k === 'zwart' ? 'rgba(255,255,255,.06)' : 'rgba(255,255,255,.55)');
+  document.querySelector('meta[name=theme-color]').content = c.bg;
 }
-document.querySelectorAll('.sw').forEach(b=>b.addEventListener('click',()=>setColor(b.dataset.color)));
-document.querySelectorAll('[data-pick]').forEach(a=>a.addEventListener('click',()=>setColor(a.dataset.pick)));
+function setColor(i){
+  if (i === cur && $('#heroImg').src.includes(COLORS[i].k)) { ringRestart(); return; }
+  const c = COLORS[i], el = $('#heroImg'); cur = i;
+  paint(c);
+  [...sws.children].forEach((b, j) => b.setAttribute('aria-pressed', j === i));
+  // naam rolt omhoog
+  const cn = $('#cname'); cn.style.transform = 'translateY(-110%)'; cn.style.opacity = 0;
+  setTimeout(() => { cn.textContent = c.n; cn.style.transition = 'none'; cn.style.transform = 'translateY(110%)'; void cn.offsetWidth;
+    cn.style.transition = ''; cn.style.transform = ''; cn.style.opacity = 1; }, 450);
+  // stoel schuift weg en de nieuwe schuift in
+  el.classList.add('out');
+  setTimeout(() => { el.src = img(c.k); el.alt = 'mhyson. Air Chair in ' + c.n; el.classList.remove('out'); el.classList.add('in'); void el.offsetWidth;
+    setTimeout(() => el.classList.remove('in'), 40); }, 520);
+  $('#xImg').src = img(c.k); $('#bbImg').src = img(c.k); $('#popImg').src = img(c.k); $('#bbName').textContent = c.n;
+  document.querySelectorAll('[data-buy]').forEach(a => a.href = CHECKOUT[c.k]);
+  ringRestart();
+}
+function ringRestart(){
+  clearTimeout(timer);
+  [...sws.children].forEach(b => b.classList.remove('run'));
+  if (!auto) return;
+  const b = sws.children[cur]; void b.offsetWidth; b.style.setProperty('--dur', DUR + 'ms'); b.classList.add('run');
+  timer = setTimeout(() => { if (inView($('#top')) && scrollY < innerHeight * .6) setColor((cur + 1) % COLORS.length); else ringRestart(); }, DUR);
+}
+paint(COLORS[0]); ringRestart();
 
-// Nav-rand en koopbalk bij scrollen
-const nav = document.getElementById('nav'), bar = document.getElementById('buybar');
-addEventListener('scroll',()=>{
-  nav.classList.toggle('scrolled', scrollY>10);
-  bar.classList.toggle('show', scrollY>innerHeight*.9 && scrollY < document.body.scrollHeight-innerHeight*1.4);
-},{passive:true});
+/* ---------- 3D-tilt op de muis + parallax logo ---------- */
+const stage = $('#stage'), tilt = $('#tilt'), big = $('#bigLogo');
+if (matchMedia('(pointer:fine)').matches) {
+  addEventListener('mousemove', e => {
+    const x = e.clientX / innerWidth - .5, y = e.clientY / innerHeight - .5;
+    tilt.style.transform = `rotateY(${x * 14}deg) rotateX(${-y * 8}deg)`;
+    big.style.transform = `translate(${x * -30}px, ${y * -18}px)`;
+  });
+}
 
-// Reveal-animaties
-const io = new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+/* ---------- kleurpanelen met horizontale scroll ---------- */
+const track = $('#track'), prog = $('#prog');
+COLORS.forEach((c, i) => {
+  const p = document.createElement('div');
+  p.className = 'panel' + (c.k === 'zwart' ? ' dark' : '');
+  p.style.cssText = `--pb:${c.bg};--pa:${c.acc};--ph:${c.hi};--pl:${c.lo}`;
+  p.innerHTML = `<div class="emb">${c.n.toLowerCase()}</div><span class="num">0${i + 1} / 05</span>
+    <img src="${img(c.k)}" alt="mhyson. Air Chair in ${c.n}" loading="lazy">
+    <div class="pinfo"><small>Air Chair</small><b>${c.n}</b><small>€295 · gratis bezorgd</small></div>
+    <div class="pbuy"><a class="btn" href="${CHECKOUT[c.k]}" data-pick="${i}">Kies ${c.n} <span class="arr">→</span></a></div>`;
+  track.appendChild(p);
+  prog.insertAdjacentHTML('beforeend', '<i><b></b></i>');
+});
+track.querySelectorAll('[data-pick]').forEach(a => a.addEventListener('click', () => { auto = false; setColor(+a.dataset.pick); }));
+const pin = $('#kleuren'), head = pin.querySelector('.head');
+function onPin(){
+  const r = pin.getBoundingClientRect(), total = pin.offsetHeight - innerHeight;
+  const t = Math.min(1, Math.max(0, -r.top / total));
+  track.style.transform = `translateX(${-t * (COLORS.length - 1) * innerWidth}px)`;
+  const f = t * (COLORS.length - 1);
+  [...prog.children].forEach((d, i) => d.firstChild.style.transform = `scaleX(${Math.min(1, Math.max(0, f - i + 1))})`);
+  [...track.children].forEach((p, i) => { const d = f - i; p.querySelector('img').style.transform = `translateX(${d * -18}vw) rotate(${d * -6}deg)`;
+    p.querySelector('.emb').style.transform = `translateX(${d * 30}vw)`; });
+  const idx = Math.round(f);
+  if (t > 0 && t < 1 && idx !== cur) { auto = false; setColor(idx); }
+  head.style.color = COLORS[idx].k === 'zwart' ? '#f2ebe7' : '#231b1a';
+  head.style.opacity = Math.max(0, 1 - t * 5);
+  prog.querySelectorAll('i').forEach(i => i.style.background = COLORS[idx].k === 'zwart' ? 'rgba(255,255,255,.2)' : 'rgba(0,0,0,.18)');
+  prog.querySelectorAll('b').forEach(b => b.style.background = COLORS[idx].k === 'zwart' ? '#f2ebe7' : '#231b1a');
+}
 
-// Kortingspopup na 12 seconden, één keer per bezoeker
-const pop = document.getElementById('pop');
-let seen = false; try{seen = localStorage.getItem('mh_pop')==='1'}catch(e){}
-if(!seen) setTimeout(()=>{pop.classList.add('open'); try{localStorage.setItem('mh_pop','1')}catch(e){}},12000);
-pop.addEventListener('click',e=>{if(e.target===pop||e.target.hasAttribute('data-close'))pop.classList.remove('open')});
 
-document.querySelectorAll('.nl-form').forEach(f=>f.addEventListener('submit',async e=>{
+/* ---------- film met AI-sfeerfoto's ---------- */
+const CINE = [
+  {src:'img/sfeer-roze.webp',  t:'Blush.<br><em>Zacht, licht, rustig.</em>'},
+  {src:'img/sfeer-beige.webp', t:'Sand.<br><em>Warm als ochtendlicht.</em>'},
+  {src:'img/sfeer-blauw.webp', t:'Sky.<br><em>Fris en helder.</em>'},
+  {src:'img/sfeer-grijs.webp', t:'Stone.<br><em>Strak en tijdloos.</em>'},
+  {src:'img/sfeer-zwart.webp', t:'Midnight.<br><em>Voor de late uren.</em>'}
+];
+const cframe = $('#cframe'), cdots = $('#cdots'), cine = $('#cine'); let cIdx = 0, cList = [];
+CINE.forEach(c => { const i = new Image(); i.onload = () => { cList.push({...c, el:i}); i.alt = ''; cframe.appendChild(i);
+  cdots.insertAdjacentHTML('beforeend', '<i></i>'); if (cList.length === 1) cShow(0); }; i.src = c.src; });
+function cShow(n){ cIdx = n; cList.forEach((c, j) => { c.el.classList.toggle('on', j === n); });
+  [...cdots.children].forEach((d, j) => d.classList.toggle('on', j === n)); if (cList[n]) $('#ctitle').innerHTML = cList[n].t; }
+setInterval(() => { if (cList.length > 1 && inView(cine)) cShow((cIdx + 1) % cList.length); }, 5200);
+function onCine(){ const r = cine.getBoundingClientRect(), total = cine.offsetHeight - innerHeight;
+  const t = Math.min(1, Math.max(0, -r.top / total)), k = Math.min(1, t * 1.6);
+  cframe.style.clipPath = `inset(${12 * (1 - k)}% ${14 * (1 - k)}% ${12 * (1 - k)}% ${14 * (1 - k)}% round ${44 * (1 - k)}px)`; }
+
+/* ---------- hotspots ---------- */
+const SPOTS = [
+  {x:50, y:11, t:"Hoofdsteun", v:"8 cm · 30°", d:"Schuif hem 8 cm omhoog of omlaag en kantel hem 30°. Je nek rust ontspannen, ook als je achterover leunt."},
+  {x:72, y:42, t:"Opklapbare armleuningen", v:"90° omhoog", d:"Klap ze omhoog en schuif helemaal aan bij je bureau. Of ga lekker in kleermakerszit zitten."},
+  {x:50, y:44, t:"Verstelbare lendensteun", v:"8 cm", d:"Het kussen schuift mee naar de plek waar jouw onderrug steun nodig heeft."},
+  {x:50, y:27, t:"Ademende mesh", v:"Koel", d:"Lucht stroomt door de rugleuning. Geen klamme rug, ook niet in de zomer."},
+  {x:50, y:59, t:"Dikke schuimzitting", v:"50 × 49 cm", d:"Hoge dichtheid schuim dat zijn vorm houdt. Zithoogte traploos van 46 tot 54 cm."},
+  {x:27, y:89, t:"Stille zwenkwielen", v:"360°", d:"Vijf wielen die soepel en stil over harde vloeren rollen."}
+];
+const xs = $('#xstage'), xl = $('#xlist'); let xOn = 0, xAuto = true;
+SPOTS.forEach((s, i) => {
+  const b = document.createElement('button'); b.className = 'hs'; b.style.left = s.x + '%'; b.style.top = s.y + '%'; b.setAttribute('aria-label', s.t);
+  b.addEventListener('click', () => { xAuto = false; xSet(i); }); xs.appendChild(b);
+  const r = document.createElement('div'); r.className = 'xi';
+  r.innerHTML = `<span class="n">0${i + 1}</span><h3>${s.t}</h3><span class="v">${s.v}</span><p>${s.d}</p>`;
+  r.addEventListener('click', () => { xAuto = false; xSet(i); }); xl.appendChild(r);
+});
+function xSet(i){ xOn = i; xs.querySelectorAll('.hs').forEach((b, j) => b.classList.toggle('on', j === i)); xl.querySelectorAll('.xi').forEach((r, j) => r.classList.toggle('on', j === i)); }
+xSet(0); setInterval(() => { if (xAuto && inView(xs)) xSet((xOn + 1) % SPOTS.length); }, 3200);
+function inView(el){ const r = el.getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0; }
+
+/* ---------- tellers ---------- */
+const cio = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; cio.unobserve(e.target);
+  e.target.querySelectorAll('[data-to]').forEach(b => { const to = +b.dataset.to, sup = b.querySelector('sup').outerHTML, t0 = performance.now();
+    const step = t => { const p = Math.min(1, (t - t0) / 1800), v = Math.round(to * (1 - Math.pow(1 - p, 4))); b.innerHTML = v + sup; if (p < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step); }); }), {threshold:.4});
+cio.observe($('#stats'));
+
+/* ---------- schommel-dial ---------- */
+const C = 200, R = 150, A0 = -90, A1 = -90 + 20 * 6; // 90° tot 110° uitvergroot in beeld
+const pt = a => [C + R * Math.cos(a * Math.PI / 180), C + R * Math.sin(a * Math.PI / 180)];
+const arcD = (a, b) => { const [x1, y1] = pt(a), [x2, y2] = pt(b); return `M${x1} ${y1} A${R} ${R} 0 ${b - a > 180 ? 1 : 0} 1 ${x2} ${y2}`; };
+$('#arcBg').setAttribute('d', arcD(A0, A1));
+const ticks = $('#ticks');
+for (let d = 0; d <= 20; d += 2) { const a = A0 + d * 6, [x1, y1] = pt(a), r2 = d % 10 ? 176 : 184;
+  const x2 = C + r2 * Math.cos(a * Math.PI / 180), y2 = C + r2 * Math.sin(a * Math.PI / 180);
+  ticks.insertAdjacentHTML('beforeend', `<line x1="${C + 166 * Math.cos(a * Math.PI / 180)}" y1="${C + 166 * Math.sin(a * Math.PI / 180)}" x2="${x2}" y2="${y2}" stroke="currentColor" stroke-opacity=".35" stroke-width="2"/>`);
+  if (d % 10 === 0) ticks.insertAdjacentHTML('beforeend', `<text x="${C + 205 * Math.cos(a * Math.PI / 180)}" y="${C + 205 * Math.sin(a * Math.PI / 180) + 5}" text-anchor="middle" font-size="14" fill="currentColor" opacity=".6" font-family="Inter">${90 + d}°</text>`); }
+const dial = document.querySelector('.dial');
+(function rock(t){
+  if (inView(dial)) { const s = (Math.sin(t / 900) + 1) / 2, deg = 90 + s * 20, a = A0 + s * 120;
+    $('#arc').setAttribute('d', arcD(A0, Math.max(A0 + .01, a)));
+    $('#needle').setAttribute('transform', `rotate(${s * 120} 200 200)`);
+    $('#degNum').textContent = Math.round(deg) + '°'; }
+  requestAnimationFrame(rock);
+})(0);
+
+/* ---------- scroll: nav, koopbalk, parallax ---------- */
+const nav = $('#nav'), bar = $('#buybar'), pars = [...document.querySelectorAll('[data-par]')];
+function onScroll(){
+  nav.classList.toggle('stuck', scrollY > 30);
+  bar.classList.toggle('show', scrollY > innerHeight * .8 && scrollY < document.body.scrollHeight - innerHeight * 1.5);
+  big.style.translate = innerWidth < 1200 ? `-50% ${scrollY * .25}px` : `-50% calc(-50% + ${scrollY * .25}px)`;
+  stage.style.transform = `translateY(${scrollY * -.08}px)`;
+  pars.forEach(p => { const r = p.parentElement.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return;
+    const k = (r.top + r.height / 2 - innerHeight / 2) / innerHeight; p.style.transform = `translateY(${-8 + k * 12}%) scale(1.04)`; });
+  onPin(); onCine();
+}
+addEventListener('scroll', onScroll, {passive:true}); addEventListener('resize', onScroll); onScroll();
+
+/* ---------- reveal ---------- */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.12});
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+/* ---------- kortingspopup ---------- */
+const pop = $('#pop'); let seen = false; try { seen = localStorage.getItem('mh_pop') === '1'; } catch (e) {}
+if (!seen) setTimeout(() => { pop.classList.add('open'); try { localStorage.setItem('mh_pop', '1'); } catch (e) {} }, 15000);
+pop.addEventListener('click', e => { if (e.target === pop || e.target.hasAttribute('data-close')) pop.classList.remove('open'); });
+document.querySelectorAll('.nl-form').forEach(f => f.addEventListener('submit', async e => {
   e.preventDefault();
-  const email = f.email.value;
-  if(NEWSLETTER_ENDPOINT){try{await fetch(NEWSLETTER_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({email})})}catch(err){}}
-  f.innerHTML = '<p style="font-weight:600">Top! Check je inbox voor je code.</p>';
+  if (NEWSLETTER_ENDPOINT) { try { await fetch(NEWSLETTER_ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json', Accept:'application/json'}, body:JSON.stringify({email:f.email.value, kleur:COLORS[cur].n})}); } catch (err) {} }
+  f.innerHTML = '<p style="font-weight:600;padding:14px 0">Top! Check je inbox voor je code.</p>';
 }));
 </script>
 </body>
