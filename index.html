@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>mhyson. Air Chair · Ergonomische bureaustoel</title>
+<meta name="description" content="De mhyson. Air Chair: ademende mesh, verstelbare hoofdsteun, opklapbare armleuningen en schommelfunctie. Gratis verzending, 30 dagen proefzitten.">
+<meta property="og:title" content="mhyson. Air Chair · Zit beter. Werk langer.">
+<meta property="og:image" content="img/stoel-zwart.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f1ee; --bg2:#efe7e2; --ink:#1b1716; --muted:#7a6f6b; --line:#e3d8d2;
+  --rose:#d98f8f; --rose-d:#b86e6e; --card:#fbf8f6; --dark:#141111;
+  --r:28px; --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.serif{font-family:Fraunces,Georgia,serif}
+.wrap{width:min(1240px,100% - 32px);margin-inline:auto}
+.eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--rose-d);font-weight:600}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:18px 30px;border-radius:999px;background:var(--ink);color:#fff;font-weight:600;font-size:14px;letter-spacing:.08em;text-transform:uppercase;border:0;cursor:pointer;transition:transform .4s var(--ease),background .3s}
+.btn:hover{transform:translateY(-2px);background:#000}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn.rose{background:var(--rose-d)}
+.dot{color:var(--rose)}
+
+/* topbar + nav */
+.topbar{background:var(--dark);color:#e9e2df;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.topbar .wrap{display:flex;justify-content:space-between;gap:16px;padding:9px 0;overflow:hidden;white-space:nowrap}
+.topbar .t2,.topbar .t3{display:none}
+@media(min-width:800px){.topbar .t2,.topbar .t3{display:block}}
+nav.main{position:sticky;top:0;z-index:50;background:rgba(246,241,238,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid transparent;transition:border-color .3s}
+nav.main.scrolled{border-color:var(--line)}
+nav.main .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:Fraunces,serif;font-size:28px;font-weight:500;letter-spacing:-.02em}
+.links{display:none;gap:34px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
+.links a{opacity:.75;transition:opacity .2s}.links a:hover{opacity:1}
+@media(min-width:900px){.links{display:flex}}
+nav .btn{padding:12px 22px;font-size:12px}
+
+/* hero */
+.hero{position:relative;padding:40px 0 60px;overflow:hidden}
+.hero .wrap{display:grid;gap:24px;align-items:center}
+@media(min-width:960px){.hero .wrap{grid-template-columns:1fr 1.1fr}.hero{padding:70px 0 90px}}
+.hero h1{font-family:Fraunces,serif;font-weight:500;font-size:clamp(46px,7.4vw,104px);line-height:.95;letter-spacing:-.035em;margin:18px 0 22px}
+.hero h1 em{font-style:italic;color:var(--rose-d)}
+.hero p.lead{font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:30em}
+.price-row{display:flex;align-items:baseline;gap:14px;margin:30px 0 26px}
+.price{font-family:Fraunces,serif;font-size:44px;font-weight:600}
+.price-was{color:var(--muted);text-decoration:line-through}
+.price-note{font-size:13px;color:var(--muted)}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.trust{display:flex;gap:22px;flex-wrap:wrap;margin-top:30px;font-size:13px;color:var(--muted)}
+.trust span::before{content:"✓ ";color:var(--rose-d);font-weight:700}
+
+/* stage: groot reliëf-logo achter de stoel */
+.stage{position:relative;aspect-ratio:1/1.02;border-radius:40px;background:radial-gradient(120% 90% at 50% 30%,#fff 0%,var(--bg2) 70%);overflow:hidden;isolation:isolate}
+.stage .emboss{position:absolute;inset:6% 0 auto;text-align:center;font-family:Fraunces,serif;font-weight:600;font-size:clamp(90px,15vw,210px);letter-spacing:-.05em;line-height:1;color:var(--bg2);
+  text-shadow:-2px -2px 3px rgba(255,255,255,.95),3px 4px 8px rgba(120,90,80,.18);z-index:0;user-select:none}
+.stage .floor{position:absolute;left:12%;right:12%;bottom:7%;height:7%;border-radius:50%;background:radial-gradient(closest-side,rgba(60,40,35,.22),transparent);filter:blur(6px);z-index:1}
+.stage img{position:absolute;inset:12% 10% 6%;width:80%;height:82%;object-fit:contain;mix-blend-mode:multiply;z-index:2;transition:opacity .5s var(--ease),transform .9s var(--ease)}
+.stage img.swap{opacity:0;transform:translateY(14px) scale(.98)}
+.stage .tag{position:absolute;z-index:3;background:rgba(255,255,255,.85);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:12px;font-weight:600;box-shadow:0 10px 30px rgba(60,40,35,.08);animation:float 6s ease-in-out infinite}
+.stage .tag.a{top:22%;left:6%}.stage .tag.b{top:46%;right:5%;animation-delay:-2s}.stage .tag.c{bottom:20%;left:8%;animation-delay:-4s}
+@keyframes float{50%{transform:translateY(-8px)}}
+
+/* kleurkeuze */
+.swatches{display:flex;gap:12px;align-items:center;margin-top:8px}
+.sw{width:38px;height:38px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px var(--line);cursor:pointer;transition:transform .3s var(--ease),box-shadow .3s}
+.sw[aria-pressed=true]{box-shadow:0 0 0 2px var(--ink);transform:scale(1.08)}
+.sw-label{font-size:13px;color:var(--muted);margin-left:6px}
+
+/* marquee */
+.marquee{background:var(--dark);color:#f2ebe8;overflow:hidden;padding:22px 0}
+.marquee .track{display:flex;gap:56px;width:max-content;animation:scroll 32s linear infinite;font-family:Fraunces,serif;font-size:clamp(22px,3vw,34px);font-style:italic}
+.marquee .track span::after{content:"✦";margin-left:56px;color:var(--rose);font-style:normal}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+section{padding:clamp(80px,11vw,150px) 0}
+h2{font-family:Fraunces,serif;font-weight:500;font-size:clamp(36px,5.2vw,72px);line-height:1;letter-spacing:-.03em}
+h2 em{font-style:italic;color:var(--rose-d)}
+.sec-head{display:grid;gap:18px;margin-bottom:56px;max-width:760px}
+.sec-head p{color:var(--muted);font-size:18px}
+
+/* features */
+.feat{display:grid;gap:18px}
+@media(min-width:800px){.feat{grid-template-columns:repeat(12,1fr)}}
+.fc{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:34px;position:relative;overflow:hidden;min-height:280px;display:flex;flex-direction:column;justify-content:flex-end;transition:transform .6s var(--ease)}
+.fc:hover{transform:translateY(-4px)}
+.fc .num{position:absolute;top:24px;right:30px;font-family:Fraunces,serif;font-size:90px;line-height:1;color:var(--bg2);font-weight:600}
+.fc h3{font-family:Fraunces,serif;font-weight:500;font-size:28px;letter-spacing:-.02em;margin-bottom:8px}
+.fc p{color:var(--muted)}
+.fc.dark{background:var(--dark);color:#f2ebe8;border-color:var(--dark)}.fc.dark p{color:#b4a9a5}.fc.dark .num{color:#2a2322}
+.fc.rose{background:linear-gradient(150deg,#f3d6d3,#e9b9b5);border-color:#e9c3bf}.fc.rose .num{color:rgba(255,255,255,.5)}.fc.rose p{color:#6e4d4a}
+@media(min-width:800px){.s7{grid-column:span 7}.s5{grid-column:span 5}.s4{grid-column:span 4}}
+
+/* kleurenshow */
+.colors{background:var(--dark);color:#f2ebe8}
+.colors .sec-head p{color:#b4a9a5}
+.cgrid{display:grid;gap:18px}
+@media(min-width:800px){.cgrid{grid-template-columns:repeat(3,1fr)}}
+.cc{border-radius:var(--r);padding:26px;aspect-ratio:3/4;position:relative;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;justify-content:space-between;transition:transform .6s var(--ease)}
+.cc:hover{transform:translateY(-6px)}
+.cc .em{position:absolute;inset:auto 0 38%;text-align:center;font-family:Fraunces,serif;font-weight:600;font-size:96px;letter-spacing:-.05em;opacity:.55;color:inherit;text-shadow:-1px -1px 2px rgba(255,255,255,.5),2px 3px 6px rgba(0,0,0,.12)}
+.cc img{position:absolute;inset:16% 12% 14%;width:76%;height:70%;object-fit:contain;mix-blend-mode:multiply}
+.cc .meta{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;font-weight:600;color:var(--ink)}
+.cc .pill{position:relative;z-index:2;align-self:flex-start;background:rgba(255,255,255,.7);border-radius:999px;padding:6px 12px;font-size:12px;color:var(--ink);font-weight:600}
+.cc.zwart{background:linear-gradient(170deg,#ece7e4,#d9d1cd)}.cc.zwart .em{color:#d2c9c4}
+.cc.roze{background:linear-gradient(170deg,#f7e3e0,#ecc6c1)}.cc.roze .em{color:#ecc9c4}
+.cc.wit{background:linear-gradient(170deg,#ffffff,#ebe8e6)}.cc.wit .em{color:#e9e5e3}
+
+/* specs */
+.specs{display:grid;gap:40px;align-items:start}
+@media(min-width:960px){.specs{grid-template-columns:1fr 1fr}}
+.spec-list{border-top:1px solid var(--line)}
+.spec-list div{display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid var(--line);font-size:15px}
+.spec-list dt{color:var(--muted)}
+.spec-list dd{font-weight:600;text-align:right}
+
+/* vergelijking */
+.cmp{width:100%;border-collapse:collapse;background:var(--card);border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
+.cmp th,.cmp td{padding:18px 20px;text-align:left;border-bottom:1px solid var(--line);font-size:15px}
+.cmp th{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.cmp td:nth-child(2){background:#f3e6e3;font-weight:600}
+.cmp tr:last-child td{border-bottom:0}
+.yes{color:var(--rose-d);font-weight:700}.no{color:#b8aeaa}
+.cmp-wrap{overflow-x:auto;border-radius:var(--r)}
+
+/* belofte */
+.promise{display:grid;gap:18px}
+@media(min-width:800px){.promise{grid-template-columns:repeat(4,1fr)}}
+.pr{padding:30px;border-radius:var(--r);background:var(--card);border:1px solid var(--line)}
+.pr b{display:block;font-family:Fraunces,serif;font-size:40px;font-weight:600;letter-spacing:-.03em;margin-bottom:6px}
+.pr span{color:var(--muted);font-size:14px}
+
+/* faq */
+.faq{max-width:860px}
+details{border-bottom:1px solid var(--line);padding:24px 0}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;font-family:Fraunces,serif;font-size:22px;font-weight:500}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:Inter;font-weight:300;font-size:28px;line-height:1;transition:transform .3s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);margin-top:12px;max-width:44em}
+
+/* nieuwsbrief */
+.club{background:linear-gradient(140deg,#efd2ce,#f6ebe8 60%);border-radius:40px;padding:clamp(40px,7vw,90px);position:relative;overflow:hidden}
+.club .em{position:absolute;right:-2%;bottom:-12%;font-family:Fraunces,serif;font-weight:600;font-size:clamp(120px,22vw,300px);letter-spacing:-.05em;color:rgba(255,255,255,.45);line-height:1;pointer-events:none}
+.club form{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px;position:relative;max-width:560px}
+.club input{flex:1 1 240px;padding:18px 24px;border-radius:999px;border:1px solid #e1c6c2;background:#fff;font:inherit;font-size:15px}
+.club small{display:block;margin-top:14px;color:#8a6c68;position:relative}
+
+footer{padding:70px 0 120px;border-top:1px solid var(--line);margin-top:80px;font-size:14px;color:var(--muted)}
+footer .wrap{display:grid;gap:30px}
+@media(min-width:800px){footer .wrap{grid-template-columns:2fr 1fr 1fr}}
+footer h4{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);margin-bottom:14px}
+footer li{list-style:none;margin:6px 0}
+
+/* sticky koopbalk */
+.buybar{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;background:rgba(20,17,17,.92);backdrop-filter:blur(14px);color:#fff;border-radius:999px;padding:10px 10px 10px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px;transform:translateY(140%);transition:transform .5s var(--ease);max-width:620px;margin:auto}
+.buybar.show{transform:none}
+.buybar .bb-t{font-size:14px}.buybar .bb-t b{font-family:Fraunces,serif;font-size:18px;margin-left:6px}
+.buybar .btn{background:var(--rose);color:var(--ink);padding:13px 22px}
+
+/* popup */
+.pop{position:fixed;inset:0;z-index:80;background:rgba(20,17,17,.45);display:none;place-items:center;padding:16px}
+.pop.open{display:grid}
+.pop .box{background:var(--bg);border-radius:32px;max-width:460px;width:100%;padding:40px 32px;position:relative;text-align:center}
+.pop .x{position:absolute;top:16px;right:20px;background:none;border:0;font-size:26px;cursor:pointer;color:var(--muted)}
+.pop h3{font-family:Fraunces,serif;font-size:40px;font-weight:500;letter-spacing:-.03em;line-height:1.05;margin:10px 0}
+.pop input{width:100%;padding:16px 22px;border-radius:999px;border:1px solid var(--line);font:inherit;margin:18px 0 10px}
+.pop .btn{width:100%;justify-content:center}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(30px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <span>Gratis verzending NL &amp; BE</span><span class="t2">30 dagen proefzitten</span><span class="t3">2 jaar garantie</span>
+</div></div>
+
+<nav class="main" id="nav"><div class="wrap">
+  <a href="#" class="logo">mhyson<span class="dot">.</span></a>
+  <div class="links"><a href="#stoel">De stoel</a><a href="#kleuren">Kleuren</a><a href="#specs">Specs</a><a href="#faq">FAQ</a></div>
+  <a href="#bestel" class="btn" data-buy>Bestel · €295</a>
+</div></nav>
+
+<header class="hero" id="bestel"><div class="wrap">
+  <div class="rv">
+    <div class="eyebrow">mhyson. Air Chair</div>
+    <h1>Zit beter.<br><em>Werk langer.</em></h1>
+    <p class="lead">Ademende mesh, een hoofdsteun die meebeweegt, armleuningen die wegklappen als je ze niet nodig hebt. Ontworpen voor lange dagen achter je bureau.</p>
+    <div class="price-row"><span class="price">€295</span><span class="price-note">incl. btw · gratis bezorgd</span></div>
+    <div class="swatches" role="group" aria-label="Kies je kleur">
+      <button class="sw" data-color="zwart" style="background:#1c1a19" aria-pressed="true" aria-label="Zwart"></button>
+      <button class="sw" data-color="roze" style="background:#e8b8b3" aria-pressed="false" aria-label="Roze"></button>
+      <button class="sw" data-color="wit" style="background:#f4f2f0" aria-pressed="false" aria-label="Wit"></button>
+      <span class="sw-label" id="swLabel">Zwart</span>
+    </div>
+    <div class="cta-row" style="margin-top:28px">
+      <a href="#" class="btn" data-buy>In winkelwagen</a>
+      <a href="#stoel" class="btn ghost">Ontdek de stoel</a>
+    </div>
+    <div class="trust"><span>Gratis verzending</span><span>30 dagen proefzitten</span><span>Veilig betalen met iDEAL</span></div>
+  </div>
+  <div class="stage rv" aria-hidden="true">
+    <div class="emboss">mhyson</div>
+    <div class="floor"></div>
+    <img id="heroImg" src="img/stoel-zwart.jpg" alt="mhyson. Air Chair">
+    <div class="tag a">Verstelbare hoofdsteun</div>
+    <div class="tag b">Opklapbare armleuningen</div>
+    <div class="tag c">Schommelfunctie</div>
+  </div>
+</div></header>
+
+<div class="marquee"><div class="track">
+  <span>Ademende mesh</span><span>Hoofdsteun</span><span>Lendensteun</span><span>Opklapbare armen</span><span>Schommelfunctie</span><span>360° draaibaar</span>
+  <span>Ademende mesh</span><span>Hoofdsteun</span><span>Lendensteun</span><span>Opklapbare armen</span><span>Schommelfunctie</span><span>360° draaibaar</span>
+</div></div>
+
+<section id="stoel"><div class="wrap">
+  <div class="sec-head rv">
+    <div class="eyebrow">Ontworpen rond jouw rug</div>
+    <h2>Elk detail doet<br><em>iets voor je.</em></h2>
+    <p>Geen gimmicks. Vijf dingen die je na een werkdag écht merkt.</p>
+  </div>
+  <div class="feat">
+    <div class="fc dark s7 rv"><span class="num">01</span><h3>Hoofdsteun die meegaat</h3><p>Stel hoogte en hoek in tot je nek ontspannen rust. Ideaal als je achterover leunt tijdens een call.</p></div>
+    <div class="fc rose s5 rv"><span class="num">02</span><h3>Armen die wegklappen</h3><p>Klap ze omhoog en schuif helemaal aan bij je bureau. Of ga in kleermakerszit zitten. Jouw stoel, jouw houding.</p></div>
+    <div class="fc s4 rv"><span class="num">03</span><h3>Ondersteuning onderrug</h3><p>Een gevormde lendensteun houdt je onderrug in de natuurlijke S-curve.</p></div>
+    <div class="fc s4 rv"><span class="num">04</span><h3>Mesh die ademt</h3><p>Lucht stroomt door de rugleuning. Geen klamme rug in de zomer.</p></div>
+    <div class="fc s4 rv"><span class="num">05</span><h3>Schommelen of vast</h3><p>Leun ontspannen achterover of zet de rugleuning vast als je gefocust wilt werken.</p></div>
+  </div>
+</div></section>
+
+<section class="colors" id="kleuren"><div class="wrap">
+  <div class="sec-head rv">
+    <div class="eyebrow">Drie kleuren</div>
+    <h2>Kies de kleur<br><em>van je werkplek.</em></h2>
+    <p>Zelfde comfort, drie karakters. Klik op een kleur om hem bovenaan te bekijken.</p>
+  </div>
+  <div class="cgrid">
+    <a href="#bestel" class="cc zwart rv" data-pick="zwart"><span class="pill">Meest gekozen</span><div class="em">mhyson</div><img src="img/stoel-zwart.jpg" alt="Zwart"><div class="meta"><span>Midnight Black</span><span>€295</span></div></a>
+    <a href="#bestel" class="cc roze rv" data-pick="roze"><span class="pill">Nieuw</span><div class="em">mhyson</div><img src="img/stoel-roze.jpg" data-fallback alt="Roze"><div class="meta"><span>Blush Pink</span><span>€295</span></div></a>
+    <a href="#bestel" class="cc wit rv" data-pick="wit"><span class="pill">Studio</span><div class="em">mhyson</div><img src="img/stoel-wit.jpg" data-fallback alt="Wit"><div class="meta"><span>Cloud White</span><span>€295</span></div></a>
+  </div>
+</div></section>
+
+<section id="specs"><div class="wrap specs">
+  <div class="sec-head rv" style="margin:0">
+    <div class="eyebrow">Specificaties</div>
+    <h2>Alles wat je<br><em>wilt weten.</em></h2>
+    <p>Binnen 15 minuten in elkaar gezet. Al het gereedschap zit in de doos.</p>
+  </div>
+  <dl class="spec-list rv">
+    <div><dt>Rugleuning</dt><dd>Ademende mesh met lendensteun</dd></div>
+    <div><dt>Hoofdsteun</dt><dd>Verstelbaar in hoogte en hoek</dd></div>
+    <div><dt>Armleuningen</dt><dd>Opklapbaar</dd></div>
+    <div><dt>Kantelfunctie</dt><dd>Schommelen, vergrendelbaar</dd></div>
+    <div><dt>Zithoogte</dt><dd>Traploos via gasveer</dd></div>
+    <div><dt>Onderstel</dt><dd>Stervoet, 5 zwenkwielen, 360° draaibaar</dd></div>
+    <div><dt>Kleuren</dt><dd>Zwart · Roze · Wit</dd></div>
+    <div><dt>Montage</dt><dd>± 15 minuten</dd></div>
+  </dl>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="sec-head rv">
+    <div class="eyebrow">Vergelijk</div>
+    <h2>Meer stoel<br><em>voor je geld.</em></h2>
+  </div>
+  <div class="cmp-wrap rv"><table class="cmp">
+    <thead><tr><th></th><th>mhyson. Air Chair</th><th>Gewone bureaustoel</th></tr></thead>
+    <tbody>
+      <tr><td>Verstelbare hoofdsteun</td><td class="yes">✓</td><td class="no">✕</td></tr>
+      <tr><td>Opklapbare armleuningen</td><td class="yes">✓</td><td class="no">✕</td></tr>
+      <tr><td>Lendensteun</td><td class="yes">✓</td><td class="no">Soms</td></tr>
+      <tr><td>Ademende mesh</td><td class="yes">✓</td><td class="no">Stof of kunstleer</td></tr>
+      <tr><td>Schommelfunctie</td><td class="yes">✓</td><td class="no">✕</td></tr>
+      <tr><td>30 dagen proefzitten</td><td class="yes">✓</td><td class="no">✕</td></tr>
+    </tbody>
+  </table></div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="promise">
+    <div class="pr rv"><b>30</b><span>dagen proefzitten. Niet blij? Je krijgt je geld terug.</span></div>
+    <div class="pr rv"><b>€0</b><span>verzendkosten naar Nederland en België.</span></div>
+    <div class="pr rv"><b>2 jaar</b><span>garantie op het frame en de mechaniek.</span></div>
+    <div class="pr rv"><b>15 min</b><span>en je zit. Montage zonder gedoe.</span></div>
+  </div>
+</div></section>
+
+<section id="faq" style="padding-top:0"><div class="wrap faq">
+  <div class="sec-head rv"><div class="eyebrow">Veelgestelde vragen</div><h2>Goed om<br><em>te weten.</em></h2></div>
+  <details class="rv"><summary>Hoe snel heb ik mijn stoel?</summary><p>Je stoel wordt verzonden vanuit een Europees magazijn. Je ontvangt een track &amp; trace zodra hij onderweg is.</p></details>
+  <details class="rv"><summary>Wat als de stoel niet bevalt?</summary><p>Je hebt 30 dagen om hem thuis uit te proberen. Past hij niet bij je? Stuur hem terug en je krijgt het volledige aankoopbedrag terug.</p></details>
+  <details class="rv"><summary>Is montage lastig?</summary><p>Nee. Alles zit in de doos, inclusief gereedschap. De meeste mensen zitten binnen een kwartier.</p></details>
+  <details class="rv"><summary>Hoe betaal ik?</summary><p>Met iDEAL, creditcard, Apple Pay of Bancontact. Betalen gaat via een beveiligde verbinding.</p></details>
+  <details class="rv"><summary>Kan ik op rekening bestellen voor mijn bedrijf?</summary><p>Ja. Mail ons voor een zakelijke offerte vanaf 5 stoelen, dan ontvang je een factuur met btw.</p></details>
+</div></section>
+
+<div class="wrap"><div class="club rv" id="club">
+  <div class="em">mhyson</div>
+  <div class="eyebrow">mhyson. club</div>
+  <h2 style="margin-top:14px">€25 korting<br><em>op je stoel.</em></h2>
+  <p style="color:#6e4d4a;margin-top:14px;max-width:30em;position:relative">Schrijf je in en ontvang je kortingscode direct in je mail. Plus tips voor een gezondere werkplek.</p>
+  <form class="nl-form"><input type="email" name="email" required placeholder="Je e-mailadres"><button class="btn" type="submit">Stuur mijn code</button></form>
+  <small>Geen spam. Uitschrijven kan altijd met één klik.</small>
+</div></div>
+
+<footer><div class="wrap">
+  <div><div class="logo">mhyson<span class="dot">.</span></div><p style="margin-top:12px;max-width:26em">Design voor elke dag. Gemaakt om lang mee te gaan.</p></div>
+  <div><h4>Shop</h4><ul><li><a href="#bestel">Air Chair</a></li><li><a href="#kleuren">Kleuren</a></li><li><a href="#club">€25 korting</a></li></ul></div>
+  <div><h4>Service</h4><ul><li><a href="#faq">Veelgestelde vragen</a></li><li><a href="mailto:hello@mhyson.com">hello@mhyson.com</a></li><li>Verzending &amp; retour</li></ul></div>
+</div></footer>
+
+<div class="buybar" id="buybar"><span class="bb-t">Air Chair <b>€295</b></span><a href="#" class="btn" data-buy>Bestel nu</a></div>
+
+<div class="pop" id="pop" role="dialog" aria-modal="true" aria-labelledby="popT">
+  <div class="box">
+    <button class="x" aria-label="Sluiten" data-close>×</button>
+    <div class="eyebrow">Welkom bij mhyson.</div>
+    <h3 id="popT">€25 korting<br>op je eerste stoel</h3>
+    <p style="color:var(--muted)">Laat je mail achter en je code staat binnen een minuut in je inbox.</p>
+    <form class="nl-form"><input type="email" name="email" required placeholder="Je e-mailadres"><button class="btn rose" type="submit">Stuur mijn code</button></form>
+  </div>
+</div>
+
+<script>
+// Vul hier de Shopify-checkoutlinks per kleur in zodra de winkel klaarstaat
+const CHECKOUT = {zwart:"#", roze:"#", wit:"#"};
+// Inschrijvingen voor e-mailmarketing (Klaviyo/Mailchimp/FormSubmit-endpoint)
+const NEWSLETTER_ENDPOINT = "";
+
+const NAMES = {zwart:"Zwart", roze:"Roze", wit:"Wit"};
+let color = "zwart";
+const heroImg = document.getElementById('heroImg');
+
+// Kleurfoto ontbreekt nog? Dan valt hij terug op de zwarte foto
+function srcFor(c){return `img/stoel-${c}.jpg`}
+document.querySelectorAll('img[data-fallback]').forEach(i=>i.addEventListener('error',()=>{i.src='img/stoel-zwart.jpg'},{once:true}));
+
+function setColor(c){
+  color = c;
+  document.querySelectorAll('.sw').forEach(b=>b.setAttribute('aria-pressed', b.dataset.color===c));
+  document.getElementById('swLabel').textContent = NAMES[c];
+  heroImg.classList.add('swap');
+  const next = new Image();
+  next.onload = ()=>{heroImg.src = next.src; requestAnimationFrame(()=>heroImg.classList.remove('swap'))};
+  next.onerror = ()=>{heroImg.src = srcFor('zwart'); heroImg.classList.remove('swap')};
+  next.src = srcFor(c);
+  document.querySelectorAll('[data-buy]').forEach(a=>a.href = CHECKOUT[c]);
+}
+document.querySelectorAll('.sw').forEach(b=>b.addEventListener('click',()=>setColor(b.dataset.color)));
+document.querySelectorAll('[data-pick]').forEach(a=>a.addEventListener('click',()=>setColor(a.dataset.pick)));
+
+// Nav-rand en koopbalk bij scrollen
+const nav = document.getElementById('nav'), bar = document.getElementById('buybar');
+addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled', scrollY>10);
+  bar.classList.toggle('show', scrollY>innerHeight*.9 && scrollY < document.body.scrollHeight-innerHeight*1.4);
+},{passive:true});
+
+// Reveal-animaties
+const io = new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+// Kortingspopup na 12 seconden, één keer per bezoeker
+const pop = document.getElementById('pop');
+let seen = false; try{seen = localStorage.getItem('mh_pop')==='1'}catch(e){}
+if(!seen) setTimeout(()=>{pop.classList.add('open'); try{localStorage.setItem('mh_pop','1')}catch(e){}},12000);
+pop.addEventListener('click',e=>{if(e.target===pop||e.target.hasAttribute('data-close'))pop.classList.remove('open')});
+
+document.querySelectorAll('.nl-form').forEach(f=>f.addEventListener('submit',async e=>{
+  e.preventDefault();
+  const email = f.email.value;
+  if(NEWSLETTER_ENDPOINT){try{await fetch(NEWSLETTER_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({email})})}catch(err){}}
+  f.innerHTML = '<p style="font-weight:600">Top! Check je inbox voor je code.</p>';
+}));
+</script>
+</body>
+</html>
