@@ -72,6 +72,7 @@
         <div class="mhc-row t"><span>Totaal</span><span id="mhcTot">€0</span></div>
         <a class="mhc-go" id="mhcGo" href="#">Veilig afrekenen →</a>
         <div class="mhc-pay">iDEAL · Bancontact · Klarna · PayPal · Creditcard</div>
+        <div class="mhc-pay" style="margin-top:6px">Je rekent veilig af via onze winkelpartner Halolume</div>
       </div>
     </aside>`);
   const el = document.getElementById('mhc'), ov = document.getElementById('mhcOv'), L = document.getElementById('mhcL');
