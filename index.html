@@ -305,8 +305,8 @@ footer .huge i{font-style:normal;color:var(--acc)}
 <body>
 
 <div class="topbar"><div class="run">
-  <span>Gratis verzending NL &amp; BE</span><span>30 dagen proefzitten</span><span>Vijf kleuren</span><span>2 jaar garantie</span><span>Veilig betalen met iDEAL</span>
-  <span>Gratis verzending NL &amp; BE</span><span>30 dagen proefzitten</span><span>Vijf kleuren</span><span>2 jaar garantie</span><span>Veilig betalen met iDEAL</span>
+  <span>Gratis verzending NL &amp; BE</span><span>30 dagen proefzitten</span><span>Vijf kleuren</span><span>2 jaar garantie</span><span>Achteraf betalen met Klarna</span>
+  <span>Gratis verzending NL &amp; BE</span><span>30 dagen proefzitten</span><span>Vijf kleuren</span><span>2 jaar garantie</span><span>Achteraf betalen met Klarna</span>
 </div></div>
 
 <nav class="main" id="nav"><div class="wrap"><div class="bar">
@@ -441,7 +441,7 @@ footer .huge i{font-style:normal;color:var(--acc)}
   <div class="blob"></div><div class="emb2">mhyson</div>
   <div class="eyebrow" style="position:relative">mhyson. club</div>
   <h2 style="margin-top:14px">€25 korting<br><em>op je stoel.</em></h2>
-  <p>Schrijf je in en je kortingscode staat direct in je mail. Plus af en toe een tip voor een fijnere werkplek.</p>
+  <p>Laat je mail achter en je krijgt direct je code. We verrekenen hem automatisch als je afrekent. Plus af en toe een tip voor een fijnere werkplek.</p>
   <form class="nl-form"><input type="email" name="email" required placeholder="Je e-mailadres"><button class="btn" type="submit">Stuur mijn code</button></form>
   <small>Geen spam. Uitschrijven kan altijd met één klik.</small>
 </div></div>
@@ -449,7 +449,7 @@ footer .huge i{font-style:normal;color:var(--acc)}
 <footer><div class="wrap">
   <div><div class="logo">mhyson<i>.</i></div><p style="margin-top:12px;max-width:26em">Design voor elke dag. Gemaakt om lang mee te gaan.</p></div>
   <div><h4>Shop</h4><ul><li><a href="#top">Air Chair</a></li><li><a href="#kleuren">Kleuren</a></li><li><a href="#club">€25 korting</a></li></ul></div>
-  <div><h4>Service</h4><ul><li><a href="#faq">Veelgestelde vragen</a></li><li>Verzending &amp; retour</li><li><a href="mailto:hello@mhyson.com">hello@mhyson.com</a></li></ul></div>
+  <div><h4>Service</h4><ul><li><a href="#faq">Veelgestelde vragen</a></li><li><a href="https://0f76bd-xw.myshopify.com/policies/refund-policy">Verzending &amp; retour</a></li><li><a href="mailto:nick@4neon.nl">nick@4neon.nl</a></li></ul></div>
   <div><h4>Volg ons</h4><ul><li>Instagram</li><li>TikTok</li><li>Pinterest</li></ul></div>
   <div class="huge">mhyson<i>.</i></div>
 </div></footer>
@@ -466,7 +466,7 @@ footer .huge i{font-style:normal;color:var(--acc)}
     <img id="popImg" src="img/stoel-roze.webp" alt="">
     <div class="eyebrow">Welkom bij mhyson.</div>
     <h3 id="popT">€25 korting<br><em>op je eerste stoel</em></h3>
-    <p style="color:var(--soft)">Laat je mail achter en je code staat binnen een minuut in je inbox.</p>
+    <p style="color:var(--soft)">Laat je mail achter en je krijgt direct je code. Hij wordt automatisch verrekend bij het afrekenen.</p>
     <form class="nl-form"><input type="email" name="email" required placeholder="Je e-mailadres"><button class="btn" type="submit">Stuur mijn code</button></form>
   </div>
 </div>
@@ -475,7 +475,7 @@ footer .huge i{font-style:normal;color:var(--acc)}
 // Shopify-checkoutlinks per kleur invullen zodra de winkel klaarstaat
 const CHECKOUT = Object.fromEntries(["roze","beige","blauw","grijs","zwart"].map(k => [k, "air-chair/?kleur=" + k]));
 // Endpoint voor e-mailinschrijvingen (Klaviyo, Mailchimp of FormSubmit)
-const NEWSLETTER_ENDPOINT = "";
+const NEWSLETTER_ENDPOINT = "https://formsubmit.co/ajax/nick@4neon.nl";
 
 const COLORS = [
   {k:"roze",  n:"Blush",    sw:"#e9b5b0", bg:"#f3d9d5", bg2:"#ecc9c4", acc:"#b9706b", ink:"#231b1a", soft:"#6f5552", hi:"rgba(255,255,255,.75)", lo:"rgba(140,70,64,.28)"},
@@ -667,8 +667,9 @@ if (!seen) setTimeout(() => { pop.classList.add('open'); try { localStorage.setI
 pop.addEventListener('click', e => { if (e.target === pop || e.target.hasAttribute('data-close')) pop.classList.remove('open'); });
 document.querySelectorAll('.nl-form').forEach(f => f.addEventListener('submit', async e => {
   e.preventDefault();
-  if (NEWSLETTER_ENDPOINT) { try { await fetch(NEWSLETTER_ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json', Accept:'application/json'}, body:JSON.stringify({email:f.email.value, kleur:COLORS[cur].n})}); } catch (err) {} }
-  f.innerHTML = '<p style="font-weight:600;padding:14px 0">Top! Check je inbox voor je code.</p>';
+  if (NEWSLETTER_ENDPOINT) { try { await fetch(NEWSLETTER_ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json', Accept:'application/json'}, body:JSON.stringify({_subject:'mhyson. club aanmelding', _template:'table', email:f.email.value, kleur:COLORS[cur].n})}); } catch (err) {} }
+  try { localStorage.setItem('mh_code', 'WELKOM25'); } catch (err) {}
+  f.innerHTML = '<p style="font-weight:600;padding:14px 0">Je code is <span style="letter-spacing:.08em">WELKOM25</span>. Hij staat klaar en gaat automatisch van je bestelling af.</p>';
 }));
 </script>
 <script src="assets/shop.js"></script>

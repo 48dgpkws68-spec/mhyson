@@ -24,7 +24,10 @@
     save(); open();
   }
   function setQ(k, q) { cart = cart.map(l => l.k === k ? {...l, q} : l).filter(l => l.q > 0); save(); }
-  function checkoutUrl(lines) { return SHOP + '/cart/' + lines.map(l => byK[l.k].v + ':' + l.q).join(','); }
+  function checkoutUrl(lines) {
+    let code = ''; try { code = localStorage.getItem('mh_code') || ''; } catch (e) {}
+    return SHOP + '/cart/' + lines.map(l => byK[l.k].v + ':' + l.q).join(',') + (code ? '?discount=' + encodeURIComponent(code) : '');
+  }
 
   /* ---------- lade ---------- */
   const css = `
@@ -71,7 +74,7 @@
         <div class="mhc-row"><span>Verzending</span><span>Gratis</span></div>
         <div class="mhc-row t"><span>Totaal</span><span id="mhcTot">€0</span></div>
         <a class="mhc-go" id="mhcGo" href="#">Veilig afrekenen →</a>
-        <div class="mhc-pay">iDEAL · Bancontact · Klarna · PayPal · Creditcard</div>
+        <div class="mhc-pay">Klarna · PayPal · Apple Pay · Bancontact · Creditcard</div>
       </div>
     </aside>`);
   const el = document.getElementById('mhc'), ov = document.getElementById('mhcOv'), L = document.getElementById('mhcL');
